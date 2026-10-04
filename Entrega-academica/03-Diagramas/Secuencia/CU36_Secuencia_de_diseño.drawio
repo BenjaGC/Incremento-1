@@ -1,0 +1,420 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="seq" name="Página-1">
+    <mxGraphModel dx="2183" dy="1068" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1700" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d0_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°36 — Exportando el ticket a PDF (caso de éxito)" vertex="1">
+          <mxGeometry height="30" width="723" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario" vertex="1">
+          <mxGeometry height="60" width="30" x="50" y="47" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="148" as="sourcePoint" />
+            <mxPoint x="60" y="648" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_Ticket" vertex="1">
+          <mxGeometry height="40" width="120" x="305" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="356" y="105" as="sourcePoint" />
+            <mxPoint x="356" y="643" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="709" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="100" as="sourcePoint" />
+            <mxPoint x="760" y="638" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1357" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1440.62" y="97" as="sourcePoint" />
+            <mxPoint x="1440.62" y="635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="456" width="10" x="351" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="456" width="10" x="55" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="308" width="10" x="755" y="179" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="160" width="10" x="1436" y="231" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.2;entryY=0.016;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_v" value="1. Hace clic en «Exportar a PDF» en el detalle del ticket">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="158" as="sourcePoint" />
+            <mxPoint x="210" y="158" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.2;entryY=0.055;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_s" value="2. GET /tickets/:code/exportar">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="363.3" y="201" as="sourcePoint" />
+            <mxPoint x="530" y="201" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.131;entryY=0.051;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="3. SELECT t.*, s.status_name, e.equipment_name FROM ticket t LEFT JOIN status s LEFT JOIN equipment e WHERE ticket_code = ?">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="765.64" y="237" />
+            </Array>
+            <mxPoint x="774" y="237" as="sourcePoint" />
+            <mxPoint x="1421" y="242" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m3" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=1.194;entryY=0.339;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_s" value="4. Retorna metadatos del ticket y equipamiento asociado">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1431" y="288" as="sourcePoint" />
+            <mxPoint x="774" y="283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m4" edge="1" parent="1" source="d0_bar_s" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=1.237;exitY=0.487;exitDx=0;exitDy=0;exitPerimeter=0;" value="5. SELECT c.*, u.first_name, u.last_name FROM comment c JOIN user u ... WHERE c.ticket_id = ?">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="774" y="329" as="sourcePoint" />
+            <mxPoint x="1429" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m5" edge="1" parent="1" source="d0_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0;exitY=0.9;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.194;entryY=0.635;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_s" value="6. Retorna historial cronológico de comentarios y bitácora">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="988" y="375" as="sourcePoint" />
+            <mxPoint x="774" y="375" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m6" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="7. Sanitiza payload: excluye comentarios privados / notas internas según el rol">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="815" y="420" />
+              <mxPoint x="815" y="442" />
+            </Array>
+            <mxPoint x="765" y="420" as="sourcePoint" />
+            <mxPoint x="765" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m7" edge="1" parent="1" source="d0_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.2;exitY=0.984;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.23;entryY=0.744;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_v" value="8. 200 OK { success: true, ticket: { ... }, historial: [ ... ] }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="487" as="sourcePoint" />
+            <mxPoint x="340" y="487" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m8" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="9. Compila reporte con jsPDF (encabezado institucional, trazabilidad y estado)">
+          <mxGeometry relative="1" x="-0.8251" y="-2" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="411" y="531" />
+              <mxPoint x="411" y="553" />
+            </Array>
+            <mxPoint x="361" y="531" as="sourcePoint" />
+            <mxPoint x="361" y="553" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m9" edge="1" parent="1" source="d0_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.3;exitY=0.965;exitDx=0;exitDy=0;exitPerimeter=0;" value="10. Inicia descarga automática del archivo: ticket-INC-XXXX.pdf">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="592" as="sourcePoint" />
+            <mxPoint x="65" y="592" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°36 — Excepción 1: Ticket sin datos" vertex="1">
+          <mxGeometry height="30" width="723" x="45" y="736" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="822" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="900" as="sourcePoint" />
+            <mxPoint x="60" y="1226" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_Ticket" vertex="1">
+          <mxGeometry height="40" width="120" x="290" y="828" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="868" as="sourcePoint" />
+            <mxPoint x="350" y="1232" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="735" y="828" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="795" y="868" as="sourcePoint" />
+            <mxPoint x="795" y="1232" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="864" y="828" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="947.66" y="868" as="sourcePoint" />
+            <mxPoint x="947.66" y="1232" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="160" width="10" x="345" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="170" width="10" x="55" y="904" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="d1_bar_v" value="1. Hace clic en &quot;Exportar a PDF&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="296" y="910" />
+            </Array>
+            <mxPoint x="65" y="910" as="sourcePoint" />
+            <mxPoint x="210" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="2. Verifica payload del ticket en estado local → detecta campos críticos vacíos">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="405" y="962" />
+              <mxPoint x="405" y="984" />
+            </Array>
+            <mxPoint x="355" y="962" as="sourcePoint" />
+            <mxPoint x="355" y="984" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="3. Cancela generación de jsPDF y previene descarga de documento corrupto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="405" y="1018" />
+              <mxPoint x="405" y="1040" />
+            </Array>
+            <mxPoint x="355" y="1018" as="sourcePoint" />
+            <mxPoint x="355" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m4" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;" value="4. Despliega notificación: &quot;No se puede exportar: datos del ticket incompletos. Recargue la página&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="341" y="1061" as="sourcePoint" />
+            <mxPoint x="65" y="1059" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°36 — Excepción 2: Fallo de conexión a la base de datos" vertex="1">
+          <mxGeometry height="30" width="723" x="65" y="1318" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="1384" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="1478" as="sourcePoint" />
+            <mxPoint x="60" y="1830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_Ticket" vertex="1">
+          <mxGeometry height="40" width="120" x="423" y="1397" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="482.65999999999997" y="1437" as="sourcePoint" />
+            <mxPoint x="482.65999999999997" y="1827" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="915" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="974.66" y="1446" as="sourcePoint" />
+            <mxPoint x="974.66" y="1836" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1365" y="1393" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1448.6599999999999" y="1443" as="sourcePoint" />
+            <mxPoint x="1448.6599999999999" y="1833" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="308" width="10" x="478" y="1479" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="308" width="10" x="55" y="1482" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="223" width="10" x="970" y="1521" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="68" width="10" x="1444" y="1567" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.283;entryY=0.02;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_v" value="1. Hace clic en &quot;Exportar a PDF&quot; en la vista de detalle">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="1488" as="sourcePoint" />
+            <mxPoint x="210" y="1488" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m1" edge="1" parent="1" source="d2_bar_v" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.352;entryY=0.024;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.697;exitY=0.159;exitDx=0;exitDy=0;exitPerimeter=0;" target="d2_bar_s" value="2. GET /tickets/:code/exportar">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="488" y="1530" as="sourcePoint" />
+            <mxPoint x="678" y="1530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m2" edge="1" parent="1" source="d2_bar_s" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.1;entryY=0.189;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_db" value="3. SELECT t.*, s.name, e.name FROM ticket t LEFT JOIN status s ... WHERE t.ticket_code = ?">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="961" y="1580" as="sourcePoint" />
+            <mxPoint x="1172" y="1582" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m3" edge="1" parent="1" source="d2_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.766;entryY=0.445;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" target="d2_bar_s" value="4. Error de conexión / Query Timeout">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1175" y="1626" as="sourcePoint" />
+            <mxPoint x="961" y="1626" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m4" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="5. Captura excepción (.catch) y registra incidente en log de errores">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="1672" />
+              <mxPoint x="1030" y="1694" />
+            </Array>
+            <mxPoint x="980" y="1672" as="sourcePoint" />
+            <mxPoint x="980" y="1694" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m5" edge="1" parent="1" source="d2_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.903;entryY=0.802;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.007;exitY=0.927;exitDx=0;exitDy=0;exitPerimeter=0;" target="d2_bar_v" value="6. 500 Internal Server Error { success: false, error: &quot;No fue posible obtener los datos del ticket&quot; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="678" y="1725" as="sourcePoint" />
+            <mxPoint x="488" y="1725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m6" edge="1" parent="1" source="d2_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.352;exitY=0.947;exitDx=0;exitDy=0;exitPerimeter=0;" value="7. Despliega notificación: &quot;Error al generar el PDF. Intente nuevamente más tarde&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="1774" as="sourcePoint" />
+            <mxPoint x="65" y="1774" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°36 — Excepción 3: jsPDF falla al generar el archivo" vertex="1">
+          <mxGeometry height="30" width="723" x="40" y="1929" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario" vertex="1">
+          <mxGeometry height="60" width="30" x="43" y="1996" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="2082" as="sourcePoint" />
+            <mxPoint x="60" y="2490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_Ticket" vertex="1">
+          <mxGeometry height="40" width="120" x="488" y="2002" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="548" y="2042" as="sourcePoint" />
+            <mxPoint x="548" y="2488" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="949" y="2002" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1009" y="2042" as="sourcePoint" />
+            <mxPoint x="1009" y="2488" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1349" y="2002" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1433" y="2042" as="sourcePoint" />
+            <mxPoint x="1433" y="2488" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="364" width="10" x="543" y="2084" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="364" width="10" x="55" y="2086" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="160" width="10" x="1004" y="2130" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="68" width="10" x="1428" y="2176" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_m0" edge="1" parent="1" source="d3_bar_a" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.145;entryY=0.018;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.817;exitY=0.02;exitDx=0;exitDy=0;exitPerimeter=0;" target="d3_bar_v" value="1. Hace clic en &quot;Exportar a PDF&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="2092" as="sourcePoint" />
+            <mxPoint x="210" y="2092" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m1" edge="1" parent="1" source="d3_bar_v" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.3;entryY=0.037;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.283;exitY=0.143;exitDx=0;exitDy=0;exitPerimeter=0;" target="d3_bar_s" value="2. GET /tickets/:code/exportar">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="553" y="2136" as="sourcePoint" />
+            <mxPoint x="743" y="2136" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m2" edge="1" parent="1" source="d3_bar_s" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.366;entryY=0.111;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.972;exitY=0.334;exitDx=0;exitDy=0;exitPerimeter=0;" target="d3_bar_db" value="3. SELECT t.*, c.* FROM ticket t JOIN comment c ... WHERE t.ticket_code = ?">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1016" y="2185" as="sourcePoint" />
+            <mxPoint x="1230" y="2185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m3" edge="1" parent="1" source="d3_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.834;entryY=0.606;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.3;exitY=0.749;exitDx=0;exitDy=0;exitPerimeter=0;" target="d3_bar_s" value="4. Retorna metadatos e historial del ticket">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1230" y="2230" as="sourcePoint" />
+            <mxPoint x="1016" y="2230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m4" edge="1" parent="1" source="d3_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.7;entryY=0.522;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.352;exitY=0.895;exitDx=0;exitDy=0;exitPerimeter=0;" target="d3_bar_v" value="5. 200 OK { success: true, ticket: { ... }, historial: [ ... ] }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="743" y="2274" as="sourcePoint" />
+            <mxPoint x="553" y="2274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m5" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="6. new jsPDF(): error durante la construcción del canvas/renderizado del PDF">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="603" y="2320" />
+              <mxPoint x="603" y="2342" />
+            </Array>
+            <mxPoint x="553" y="2320" as="sourcePoint" />
+            <mxPoint x="553" y="2342" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m6" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="7. Captura excepción (.catch), aborta descarga y registra error en console">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="603" y="2376" />
+              <mxPoint x="603" y="2398" />
+            </Array>
+            <mxPoint x="553" y="2376" as="sourcePoint" />
+            <mxPoint x="553" y="2398" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m7" edge="1" parent="1" source="d3_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.679;entryY=0.961;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.007;exitY=0.961;exitDx=0;exitDy=0;exitPerimeter=0;" target="d3_bar_a" value="8. Despliega alerta: &quot;Error al compilar el PDF. Intente imprimir directamente desde el navegador&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="2434" as="sourcePoint" />
+            <mxPoint x="65" y="2434" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="723" x="40" y="2500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

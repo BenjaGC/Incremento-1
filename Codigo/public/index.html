@@ -1,0 +1,1959 @@
+    <!DOCTYPE html>
+<html lang="es" x-data="app()" x-init="init()">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Operaciones — Clínica Aconcagua</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root {
+            --brand-bg:      #5BA49B;
+            --nav-bg:        #E4EBE5;
+            --dark:          #2c3e50;
+            --accent:        #3d5a80;
+            --green:         #28a745;
+            --yellow:        #ffc107;
+            --red:           #dc3545;
+            --gray:          #6c757d;
+            --orange:        #fd7e14;
+            --blue:          #007bff;
+            --radius:        8px;
+            --shadow:        0 2px 12px rgba(0,0,0,.14);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: var(--brand-bg);
+            min-height: 100vh;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            background: var(--nav-bg);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 6px rgba(0,0,0,.1);
+        }
+        .navbar-brand { font-size: 18px; font-weight: bold; white-space: nowrap; }
+        .navbar-search { flex: 1; max-width: 480px; }
+        .navbar-search input {
+            width: 100%; padding: 9px 16px;
+            border-radius: 20px; border: 1px solid #ccc;
+            outline: none; font-size: 14px;
+            transition: box-shadow .2s;
+        }
+        .navbar-search input:focus { box-shadow: 0 0 0 3px rgba(61,90,128,.25); }
+
+        .nav-right { display: flex; align-items: center; gap: 12px; position: relative; }
+
+        /* ── BELL ── */
+        .bell-wrap { position: relative; cursor: pointer; font-size: 22px; line-height: 1; }
+        .badge {
+            position: absolute; top: -5px; right: -8px;
+            background: var(--red); color: #fff;
+            border-radius: 50%; font-size: 10px;
+            padding: 2px 5px; font-weight: bold;
+            pointer-events: none;
+        }
+        .notif-dropdown {
+            position: absolute; right: 0; top: 38px;
+            background: #fff; border-radius: var(--radius);
+            box-shadow: var(--shadow); width: 320px; max-height: 420px;
+            overflow-y: auto; z-index: 200;
+        }
+        .notif-section-title {
+            padding: 7px 14px 5px; font-size: 11px; font-weight: bold;
+            color: #888; text-transform: uppercase; letter-spacing: .5px;
+            background: #f8f8f8; border-bottom: 1px solid #eee;
+        }
+        .notif-item {
+            display: flex; align-items: flex-start; gap: 8px;
+            padding: 10px 14px; border-bottom: 1px solid #eee;
+            cursor: pointer; width: 100%; background: none; border: none;
+            text-align: left;
+        }
+        .notif-item:hover { background: #f5f5f5; }
+        .notif-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            flex-shrink: 0; margin-top: 4px;
+        }
+        .notif-dot-orange { background: var(--orange); }
+        .notif-dot-blue   { background: var(--blue); }
+        .notif-item strong { display: block; font-size: 13px; color: #333; }
+        .notif-item span   { font-size: 11px; color: #888; font-weight: normal; }
+
+        /* ── PROFILE BUTTON & DROPDOWN ── */
+        .profile-btn {
+            cursor: pointer; background: #555; color: #fff;
+            padding: 8px 14px; border-radius: 4px;
+            font-weight: bold; font-size: 14px;
+            user-select: none; transition: background .2s;
+            border: none;
+        }
+        .profile-btn.guest { border-radius: 50%; }
+        .profile-btn:hover { background: #777; }
+
+        .profile-dropdown {
+            position: absolute; right: 0; top: 42px;
+            background: #fff; border-radius: var(--radius);
+            box-shadow: var(--shadow); width: 190px; z-index: 200;
+            overflow: hidden;
+        }
+        .profile-dropdown button {
+            width: 100%; padding: 12px 16px; border: none;
+            background: none; text-align: left; cursor: pointer;
+            border-bottom: 1px solid #eee; color: #333; font-weight: bold;
+            font-size: 13px;
+        }
+        .profile-dropdown button:hover { background: #f0f0f5; }
+        .profile-dropdown button.danger { color: var(--red); }
+        .profile-dropdown button:last-child { border-bottom: none; }
+
+        /* ── MAIN ── */
+        .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+
+        /* ── HERO BUTTONS ── */
+        .hero-btns {
+            display: flex; justify-content: center;
+            gap: 16px; margin: 40px 0 30px; flex-wrap: wrap;
+        }
+        .btn-hero {
+            background: #73ff73; color: #1a4d1a;
+            border: none; padding: 14px 40px;
+            font-size: 17px; font-weight: bold;
+            border-radius: 50px; cursor: pointer;
+            box-shadow: 0 4px 18px rgba(115,255,115,.4);
+            transition: transform .18s, box-shadow .18s;
+        }
+        .btn-hero:hover { transform: scale(1.05); box-shadow: 0 6px 22px rgba(115,255,115,.5); }
+        .btn-hero.teal {
+            background: #5bc0de; color: #0c3a4d;
+            box-shadow: 0 4px 18px rgba(91,192,222,.4);
+        }
+        .btn-hero.teal:hover { background: #46b8da; box-shadow: 0 6px 22px rgba(91,192,222,.5); }
+
+        /* ── EMPTY STATE ── */
+        .empty-state { text-align: center; padding: 70px 20px; color: #fff; }
+        .empty-state .icon { font-size: 64px; display: block; margin-bottom: 16px; }
+        .empty-state h2 { font-size: 22px; margin: 0 0 8px; }
+        .empty-state p  { font-size: 15px; color: rgba(255,255,255,.85); margin: 0; }
+
+        /* ── HISTORIAL BANNER ── */
+        .hist-banner {
+            display: flex; align-items: center; justify-content: space-between;
+            background: linear-gradient(135deg,#e8eaf6,#dde1f9);
+            border: 2px solid #7986cb; border-radius: 10px;
+            padding: 12px 18px; margin-bottom: 16px; gap: 12px;
+        }
+        .hist-banner span { font-size: 14px; font-weight: bold; color: #3949ab; }
+        .hist-banner button {
+            background: #3949ab; color: #fff; border: none;
+            padding: 7px 18px; border-radius: 20px; cursor: pointer;
+            font-size: 13px; font-weight: bold; white-space: nowrap;
+        }
+        .hist-banner button:hover { background: #283593; }
+
+        /* ── SPINNER ── */
+        .spinner { text-align: center; padding: 50px; color: #fff; }
+        .spin-icon { font-size: 36px; display: block; margin-bottom: 12px; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── TICKET CARD ── */
+        .ticket-card {
+            background: #fff; padding: 14px 16px; border-radius: var(--radius);
+            box-shadow: 0 2px 6px rgba(0,0,0,.1); cursor: pointer;
+            margin-bottom: 10px; display: flex;
+            justify-content: space-between; align-items: center;
+            border-left: 5px solid #bbb;
+            transition: transform .15s, box-shadow .15s;
+        }
+        .ticket-card:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,.16); }
+        .ticket-card h4 { margin: 0 0 4px; color: #333; font-size: 15px; }
+        .ticket-card p  { margin: 0; font-size: 12px; color: #666; }
+
+        /* ── BADGE ── */
+        .badge-estado {
+            padding: 5px 11px; border-radius: 12px;
+            font-size: 11px; font-weight: bold; color: #fff; white-space: nowrap;
+        }
+        .s-curso     { background: var(--blue); }
+        .s-espera    { background: var(--yellow); color: #333; }
+        .s-resuelto  { background: var(--green); }
+        .s-cancelado { background: var(--gray); }
+        .s-pendiente { background: var(--orange); }
+
+        .notif-dot-card {
+            display: inline-block; width: 9px; height: 9px;
+            background: var(--orange); border-radius: 50%;
+            margin-left: 7px; vertical-align: middle;
+        }
+
+        /* ── MODALS ── */
+        .modal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.5);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 300;
+        }
+        .modal-box {
+            background: #fff; border-radius: var(--radius);
+            box-shadow: var(--shadow); padding: 24px;
+            width: 340px; max-height: 92vh; overflow-y: auto;
+            position: relative;
+        }
+        .modal-box.lg { width: 640px; max-width: 96vw; }
+        .modal-box.sm { width: 360px; text-align: center; }
+        .close-btn {
+            position: absolute; top: 10px; right: 14px;
+            cursor: pointer; font-size: 20px; font-weight: bold;
+            color: #555; background: none; border: none; line-height: 1;
+        }
+        .close-btn:hover { color: var(--red); }
+        .modal-title { margin: 0 0 16px; text-align: center; font-size: 18px; }
+
+        /* ── TABS ── */
+        .tabs { display: flex; margin-bottom: 16px; border-radius: 6px; overflow: hidden; }
+        .tabs button {
+            flex: 1; padding: 10px; border: none; cursor: pointer;
+            background: #ddd; font-weight: bold; font-size: 13px;
+            transition: background .2s;
+        }
+        .tabs button.active { background: var(--dark); color: #fff; }
+
+        /* ── FORM ELEMENTS ── */
+        input, select, textarea {
+            width: 100%; padding: 9px 12px; margin: 6px 0;
+            border: 1px solid #ccc; border-radius: 6px;
+            box-sizing: border-box; font-family: inherit;
+            font-size: 14px; transition: border-color .2s, box-shadow .2s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none; border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(61,90,128,.18);
+        }
+        textarea { resize: vertical; min-height: 80px; }
+        label { font-size: 13px; font-weight: bold; color: #444; display: block; margin-top: 8px; }
+
+        .btn {
+            display: inline-block; padding: 9px 18px;
+            border: none; border-radius: 6px; cursor: pointer;
+            font-size: 14px; font-weight: bold;
+            transition: filter .15s, transform .1s;
+        }
+        .btn:hover:not(:disabled) { filter: brightness(.92); }
+        .btn:active:not(:disabled) { transform: scale(.98); }
+        .btn:disabled { opacity: .55; cursor: not-allowed; }
+        .btn-block { width: 100%; margin-top: 10px; }
+        .btn-green  { background: var(--green);  color: #fff; }
+        .btn-blue   { background: var(--blue);   color: #fff; }
+        .btn-gray   { background: var(--gray);   color: #fff; }
+        .btn-red    { background: var(--red);    color: #fff; }
+        .btn-orange { background: var(--orange); color: #fff; }
+        .btn-yellow { background: var(--yellow); color: #333; }
+        .btn-pill   { border-radius: 20px; padding: 5px 14px; font-size: 12px; }
+
+        /* ── RUT VALIDATION ── */
+        .rut-wrap { position: relative; }
+        .rut-wrap input { padding-right: 36px; }
+        .rut-icon {
+            position: absolute; right: 10px; top: 50%;
+            transform: translateY(-50%); font-size: 16px;
+            pointer-events: none;
+        }
+        .rut-feedback { font-size: 12px; font-weight: bold; margin: -2px 0 6px 2px; min-height: 15px; }
+        .rut-ok    { color: var(--green); }
+        .rut-error { color: var(--red); }
+        input.border-ok    { border-color: var(--green); }
+        input.border-error { border-color: var(--red); }
+
+        /* ── RECOVERY STEPPER ── */
+        .stepper { display: flex; align-items: center; gap: 0; margin-bottom: 20px; }
+        .step-circle {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: #ddd; color: #888; font-size: 12px; font-weight: bold;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; transition: background .3s, color .3s;
+        }
+        .step-circle.active { background: var(--dark); color: #fff; }
+        .step-circle.done   { background: var(--green); color: #fff; }
+        .step-line { flex: 1; height: 3px; background: #ddd; transition: background .3s; }
+        .step-line.done { background: var(--green); }
+
+        .code-input {
+            font-size: 22px; letter-spacing: 6px; text-align: center;
+            font-family: 'Courier New', monospace; padding: 12px 40px 12px 14px;
+        }
+        .code-input.code-ok    { border-color: var(--green); box-shadow: 0 0 0 3px rgba(40,167,69,.18); }
+        .code-input.code-error { border-color: var(--red);   box-shadow: 0 0 0 3px rgba(220,53,69,.18); }
+
+        .chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 7px 14px; border-radius: 20px; font-size: 12px;
+            font-weight: bold; margin-top: 6px;
+        }
+        .chip-ok    { background: #d4edda; color: #155724; border: 1.5px solid #c3e6cb; }
+        .chip-error { background: #f8d7da; color: #721c24; border: 1.5px solid #f5c6cb; }
+
+        .hint-box {
+            font-size: 12px; color: #6c757d; background: #f8f9fa;
+            border-radius: 6px; padding: 7px 10px; margin: 6px 0 10px;
+            border-left: 3px solid #adb5bd;
+        }
+        .btn-link {
+            background: none; border: none; color: var(--blue);
+            cursor: pointer; font-size: 12px; text-decoration: underline;
+            padding: 0; display: block; margin-top: 4px;
+        }
+        .btn-link:disabled { color: #aaa; text-decoration: none; cursor: default; }
+        .success-chip {
+            background: #d4edda; border: 1.5px solid #c3e6cb;
+            border-radius: 8px; padding: 10px 14px;
+            display: flex; align-items: center; gap: 8px;
+            font-size: 13px; color: #155724; font-weight: bold;
+            margin-bottom: 14px;
+        }
+
+        /* ── FLOATING DETAIL WINDOW ── */
+        .detail-overlay {
+            position: fixed; inset: 0; z-index: 250;
+            pointer-events: none;
+        }
+        .detail-window {
+            pointer-events: auto;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 720px; height: 86vh;
+            min-width: 400px; min-height: 400px;
+            background: #fff; border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+            display: flex; flex-direction: column;
+            border: 1px solid #777; overflow: hidden;
+            resize: both;
+        }
+        .detail-window.maximized {
+            top: 0 !important; left: 0 !important;
+            transform: none !important;
+            width: 100vw !important; height: 100vh !important;
+            border-radius: 0 !important; resize: none !important;
+        }
+        .detail-window.minimized {
+            top: auto !important; bottom: 0 !important;
+            left: 20px !important; transform: none !important;
+            width: 360px !important; height: 42px !important;
+            min-height: 42px !important; resize: none !important;
+        }
+        .detail-header {
+            background: var(--dark); color: #fff;
+            padding: 9px 14px; display: flex;
+            justify-content: space-between; align-items: center;
+            cursor: move; user-select: none; flex-shrink: 0;
+        }
+        .detail-header-title { font-size: 14px; font-weight: bold; }
+        .win-ctrl {
+            cursor: pointer; font-weight: bold; margin-left: 14px;
+            font-size: 15px; transition: color .15s;
+        }
+        .win-ctrl:hover { color: #5cf55c; }
+        .win-ctrl.close:hover { color: #ff4d4d; }
+        .detail-body {
+            padding: 20px; overflow-y: auto; flex: 1;
+            display: flex; flex-direction: column;
+        }
+
+        /* ticket info block */
+        .ticket-info-block {
+            background: #f8f9fa; padding: 14px; border-radius: 6px;
+            margin-bottom: 14px; border: 1px solid #e9ecef; font-size: 13px;
+        }
+        .ticket-info-block p { margin: 0 0 5px; }
+        .ticket-info-block p:last-child { margin: 0; border-top: 1px dashed #ccc; padding-top: 7px; margin-top: 6px; }
+
+        /* ── COMMENTS ── */
+        .comment-box {
+            background: #f8f9fa; padding: 10px; border-radius: 6px;
+            border-left: 3px solid var(--blue); margin-bottom: 8px;
+        }
+        .comment-box.bitacora { border-left-color: var(--gray); background: #f0f0f0; }
+        .comment-meta  { font-size: 11px; color: #777; margin-bottom: 3px; }
+        .comment-text  { font-size: 13px; color: #333; margin: 0; white-space: pre-wrap; }
+
+        .comments-area {
+            flex: 1; min-height: 220px; overflow-y: auto;
+            border: 1px solid #eee; padding: 10px;
+            border-radius: 4px; background: #fff; margin-bottom: 12px;
+        }
+
+        .controls-bar {
+            background: #f8f9fa; padding: 14px; border-radius: 6px;
+            border: 1px solid #e9ecef;
+        }
+        .controls-bar textarea { min-height: 56px; }
+        .controls-bar .footer { display: flex; justify-content: flex-end; margin-top: 8px; }
+
+        /* ── MANUAL ITEMS ── */
+        .manual-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 11px 14px; border-bottom: 1px solid #eee;
+            background: #fff; border-radius: 4px; margin-bottom: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.06);
+        }
+        .manual-name { font-weight: bold; color: #333; font-size: 14px; }
+        .manual-meta { font-size: 11px; color: #888; margin-top: 2px; }
+        .drop-zone {
+            border: 3px dashed #5bc0de; border-radius: 12px;
+            padding: 28px; text-align: center; cursor: pointer;
+            transition: background .2s; background: #f0faff; margin-bottom: 10px;
+        }
+        .drop-zone:hover, .drop-zone.drag-over { background: #d0eefa; border-color: #2a9fd6; }
+        .drop-zone .drop-icon { font-size: 46px; display: block; margin-bottom: 10px; }
+
+        /* ── STATS MODAL ── */
+        .stats-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.55);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 350;
+        }
+        .stats-box {
+            background: #f4f6f9; width: 900px; max-width: 96vw;
+            max-height: 92vh; overflow-y: auto; border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0,0,0,.35); position: relative;
+        }
+        .stats-header {
+            background: var(--dark); color: #fff;
+            padding: 16px 24px; border-radius: 12px 12px 0 0;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 10;
+        }
+        .stats-body { padding: 24px; }
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+            gap: 12px; margin-bottom: 24px;
+        }
+        .stats-card {
+            background: #fff; border-radius: 10px; padding: 16px;
+            text-align: center; border-top: 3px solid #ccc;
+        }
+        .stats-card .val { font-size: 28px; font-weight: bold; }
+        .stats-card .lbl { font-size: 11px; color: #555; margin-top: 4px; }
+        .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .chart-card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+        .chart-card h3 { margin: 0 0 14px; font-size: 13px; color: var(--dark); }
+        .chart-wrap { position: relative; height: 240px; }
+
+        /* ── BANNER MANUAL ── */
+        .manual-banner {
+            background: linear-gradient(135deg,#fff3cd,#ffeeba);
+            border: 2px solid var(--yellow); border-radius: 10px;
+            padding: 16px 18px; margin-bottom: 14px; text-align: center;
+        }
+        .manual-banner strong { display: block; font-size: 15px; color: #856404; margin-bottom: 6px; }
+        .manual-banner p { font-size: 13px; color: #856404; margin: 0 0 10px; }
+
+        /* ── SESSION DISPLACED ── */
+        .session-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.75);
+            z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .session-box {
+            background: #fff; border-radius: 12px;
+            padding: 35px 30px; max-width: 380px;
+            text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,.4);
+        }
+        .session-box h2 { color: var(--red); margin: 0 0 10px; }
+        .session-box p  { color: #555; font-size: 14px; margin: 0 0 20px; }
+
+        /* ── MISC ── */
+        .msg { margin-top: 10px; font-size: 13px; text-align: center; font-weight: bold; min-height: 18px; }
+        .section-title {
+            font-size: 15px; font-weight: bold; border-bottom: 1px solid #ccc;
+            padding-bottom: 5px; margin-bottom: 10px; color: var(--dark);
+        }
+        .action-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        [x-cloak] { display: none !important; }
+
+        @media (max-width: 640px) {
+            .stats-row { grid-template-columns: 1fr; }
+            .detail-window { width: 98vw !important; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     SESSION DISPLACED BANNER
+══════════════════════════════════════ -->
+<div x-cloak x-show="sessionDisplaced" class="session-overlay">
+    <div class="session-box">
+        <div style="font-size:48px;margin-bottom:14px">⚠️</div>
+        <h2>Sesión cerrada</h2>
+        <p>Tu sesión fue cerrada porque se inició sesión con tu cuenta en otro dispositivo.</p>
+        <button class="btn btn-red" @click="sessionDisplaced=false">Entendido</button>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<nav class="navbar">
+    <span class="navbar-brand">Ticketera Clínica Aconcagua</span>
+
+    <div class="navbar-search" x-show="usuario">
+        <input
+            type="text"
+            x-model.debounce.300ms="busqueda"
+            @input="onBusqueda()"
+            placeholder="🔍 Buscar ticket por ID o palabra clave..."
+        >
+    </div>
+
+    <div class="nav-right">
+        <!-- Bell -->
+        <div x-show="usuario" class="bell-wrap" @click.stop="toggleNotif()" x-cloak>
+            🔔
+            <span x-show="notifTotal > 0" class="badge" x-text="notifTotal"></span>
+            <div x-show="notifOpen" @click.outside="notifOpen=false" class="notif-dropdown" x-cloak>
+                <template x-if="notifCreador.length">
+                    <div>
+                        <div class="notif-section-title">🔔 Novedades en mis tickets</div>
+                        <template x-for="t in notifCreador" :key="t.id_ticket">
+                            <button class="notif-item" @click="notifOpen=false; abrirDetalle(t.id_ticket)">
+                                <span class="notif-dot notif-dot-orange"></span>
+                                <div>
+                                    <strong x-text="t.id_ticket + ' — ' + t.aparato"></strong>
+                                    <span>Hay una actualización en tu ticket</span>
+                                </div>
+                            </button>
+                        </template>
+                    </div>
+                </template>
+                <template x-if="notifTecnico.length">
+                    <div>
+                        <div class="notif-section-title">📋 Tickets asignados a mí</div>
+                        <template x-for="t in notifTecnico" :key="t.id_ticket">
+                            <button class="notif-item" @click="notifOpen=false; abrirDetalle(t.id_ticket)">
+                                <span class="notif-dot notif-dot-blue"></span>
+                                <div>
+                                    <strong x-text="t.id_ticket + ' — ' + t.aparato"></strong>
+                                    <span x-text="t.creador + ' | ' + t.fecha"></span>
+                                </div>
+                            </button>
+                        </template>
+                    </div>
+                </template>
+                <template x-if="!notifCreador.length && !notifTecnico.length">
+                    <div style="padding:14px;font-size:13px;color:#888;text-align:center;">Sin notificaciones nuevas.</div>
+                </template>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div style="position:relative">
+            <button
+                class="profile-btn"
+                :class="usuario ? '' : 'guest'"
+                @click.stop="profileOpen=!profileOpen"
+                x-text="usuario ? usuario.nombre : '👤'"
+            ></button>
+            <div x-show="profileOpen" @click.outside="profileOpen=false" class="profile-dropdown" x-cloak>
+                <template x-if="usuario">
+                    <div>
+                        <button @click="profileOpen=false; modalIncidente=true; resetIncidente()">Generar ticket</button>
+                        <button @click="profileOpen=false; verMisTickets()">Mis tickets</button>
+                        <button @click="profileOpen=false; verHistorial()">📁 Historial de tickets</button>
+                        <button x-show="usuario && usuario.permisos==='si'" @click="profileOpen=false; abrirEstadisticas()">📊 Estadísticas</button>
+                        <button @click="profileOpen=false; abrirEditarPerfil()">Editar perfil</button>
+                        <button class="danger" @click="profileOpen=false; cerrarSesion()">Cerrar sesión</button>
+                    </div>
+                </template>
+                <template x-if="!usuario">
+                    <button @click="profileOpen=false; modalAuth=true">Iniciar sesión</button>
+                </template>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════ -->
+<div class="main">
+    <!-- Hero buttons -->
+    <div x-show="usuario" class="hero-btns" x-cloak>
+        <button class="btn-hero" @click="modalIncidente=true; resetIncidente()">+ Nuevo incidente</button>
+        <button class="btn-hero teal" @click="abrirManuales()">📄 Manuales de Equipos</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div x-show="usuario" x-cloak>
+        <!-- Historial banner -->
+        <div x-show="modo==='historial'" class="hist-banner" x-cloak>
+            <span x-text="histBannerText"></span>
+            <button @click="volverAVacio()">← Volver</button>
+        </div>
+
+        <!-- Spinner -->
+        <div x-show="cargando" class="spinner" x-cloak>
+            <span class="spin-icon">⟳</span>
+            <span>Cargando tickets...</span>
+        </div>
+
+        <!-- Empty state -->
+        <div x-show="modo==='vacio' && !cargando" class="empty-state" x-cloak>
+            <span class="icon">🔍</span>
+            <h2>Busca un ticket o explora el historial</h2>
+            <p>Usa la barra de búsqueda o el menú para ver tickets.</p>
+        </div>
+
+        <!-- Ticket list -->
+        <div x-show="modo!=='vacio' && !cargando" x-cloak>
+            <template x-if="listaTickets.length === 0 && !cargando">
+                <p style="text-align:center;color:#fff;margin-top:30px" x-text="msgVacio"></p>
+            </template>
+            <template x-for="t in listaTickets" :key="t.id_ticket">
+                <div
+                    class="ticket-card"
+                    :style="'border-left-color:' + colorEstado(t.estado)"
+                    @click="abrirDetalle(t.id_ticket, t)"
+                >
+                    <div>
+                        <h4>
+                            <span x-text="t.id_ticket + ' — ' + t.aparato"></span>
+                            <span x-show="usuario && t.creador===usuario.nombre && t.notificacion_creador==1" class="notif-dot-card"></span>
+                        </h4>
+                        <p x-text="'Creador: ' + t.creador + ' | ' + t.fecha"></p>
+                    </div>
+                    <span class="badge-estado" :class="claseEstado(t.estado)" x-text="t.estado || 'En curso'"></span>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <!-- Not logged in -->
+    <div x-show="!usuario" class="empty-state" style="margin-top:60px">
+        <span class="icon">🏥</span>
+        <h2>Bienvenido al Panel de Operaciones</h2>
+        <p>Inicia sesión para gestionar los tickets de incidencias.</p>
+        <button class="btn btn-blue" style="margin-top:20px;padding:12px 32px;font-size:16px" @click="modalAuth=true">Iniciar Sesión</button>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL — AUTH
+══════════════════════════════════════ -->
+<div x-cloak x-show="modalAuth" class="modal-overlay" @click.self="modalAuth=false">
+    <div class="modal-box">
+        <button class="close-btn" @click="modalAuth=false">✕</button>
+
+        <!-- Tabs -->
+        <div class="tabs" x-show="authTab!=='recover'">
+            <button :class="authTab==='login'?'active':''" @click="authTab='login'; authMsg=''">Iniciar Sesión</button>
+            <button :class="authTab==='registro'?'active':''" @click="switchRegistro()">Registrarse</button>
+        </div>
+
+        <!-- LOGIN -->
+        <div x-show="authTab==='login'">
+            <input type="text" x-model="login.rut" placeholder="RUT (ej: 12345678-9)" maxlength="11">
+            <input type="password" x-model="login.pass" placeholder="Contraseña" @keyup.enter="iniciarSesion()">
+            <button class="btn btn-green btn-block" @click="iniciarSesion()">Ingresar</button>
+            <a href="#" style="display:block;text-align:center;margin-top:14px;font-size:13px;color:#333;text-decoration:underline"
+               @click.prevent="iniciarRecovery()">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <!-- REGISTRO -->
+        <div x-show="authTab==='registro'">
+            <input type="text"     x-model="reg.nombre"  placeholder="Nombre completo">
+            <div class="rut-wrap">
+                <input
+                    type="text" x-model="reg.rut"
+                    placeholder="RUT (ej: 12345678-9)" maxlength="11"
+                    :class="reg.rut.includes('-') ? (rutValido(reg.rut) ? 'border-ok' : 'border-error') : ''"
+                    @input="authMsg=''"
+                >
+                <span class="rut-icon" x-show="reg.rut.includes('-')" x-text="rutValido(reg.rut)?'✅':'❌'"></span>
+            </div>
+            <p class="rut-feedback" :class="reg.rut.includes('-') ? (rutValido(reg.rut)?'rut-ok':'rut-error') : ''"
+               x-text="reg.rut.includes('-') ? (rutValido(reg.rut)?'✅ RUT válido':'❌ RUT inválido') : ''"></p>
+            <input type="email"    x-model="reg.correo"  placeholder="Correo electrónico (Opcional)">
+            <input type="password" x-model="reg.pass"    placeholder="Contraseña">
+            <button class="btn btn-green btn-block" :disabled="!rutValido(reg.rut)" @click="registrar()">Guardar</button>
+        </div>
+
+        <!-- RECOVERY -->
+        <div x-show="authTab==='recover'">
+            <!-- Stepper -->
+            <div class="stepper">
+                <div class="step-circle" :class="rec.paso>=1?(rec.paso>1?'done':'active'):''">1</div>
+                <div class="step-line"   :class="rec.paso>1?'done':''"></div>
+                <div class="step-circle" :class="rec.paso>=2?(rec.paso>2?'done':'active'):''">2</div>
+                <div class="step-line"   :class="rec.paso>2?'done':''"></div>
+                <div class="step-circle" :class="rec.paso>=3?'active':''">3</div>
+            </div>
+
+            <!-- Paso 1 -->
+            <div x-show="rec.paso===1">
+                <p style="font-size:13px;color:#555;margin:0 0 10px">Ingresa tu RUT para recibir un código de verificación.</p>
+                <input type="text" x-model="rec.rut" placeholder="RUT (ej: 12345678-9)" maxlength="11">
+                <button class="btn btn-green btn-block" @click="recPaso1()">Enviar Código →</button>
+                <a href="#" style="display:block;text-align:center;margin-top:12px;font-size:12px;color:#666;text-decoration:underline"
+                   @click.prevent="authTab='login'; authMsg=''">Volver al inicio de sesión</a>
+            </div>
+
+            <!-- Paso 2 -->
+            <div x-show="rec.paso===2">
+                <div class="hint-box" x-text="rec.correoHint || '📧 Código enviado a tu correo registrado.'"></div>
+                <label>Código de 6 dígitos:</label>
+                <div style="position:relative">
+                    <input
+                        type="text" x-model="rec.codigo" maxlength="6" inputmode="numeric"
+                        class="code-input"
+                        :class="rec.codigoEstado==='ok'?'code-ok':(rec.codigoEstado==='error'?'code-error':'')"
+                        placeholder="······" @input="rec.codigoEstado=''; authMsg=''"
+                    >
+                    <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none"
+                          x-show="rec.codigoEstado"
+                          x-text="rec.codigoEstado==='ok'?'✅':'❌'"></span>
+                </div>
+                <div x-show="rec.codigoEstado" class="chip" :class="rec.codigoEstado==='ok'?'chip-ok':'chip-error'"
+                     x-text="rec.codigoEstado==='ok'?'✅ Código válido':'❌ Código inválido — inténtalo de nuevo'"></div>
+                <div style="text-align:center;margin-top:6px">
+                    <button class="btn-link" :disabled="rec.reenviarCooldown>0" @click="reenviarCodigo()"
+                            x-text="rec.reenviarCooldown>0?'Reenviar ('+rec.reenviarCooldown+'s)':'¿No llegó? Reenviar código'"></button>
+                </div>
+                <button class="btn btn-green btn-block" style="margin-top:12px"
+                        :disabled="rec.codigo.length<6 || rec.codigoEstado==='ok'"
+                        @click="recPaso2()">Verificar Código →</button>
+                <a href="#" style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#666;text-decoration:underline"
+                   @click.prevent="rec.paso=1; rec.codigo=''; rec.codigoEstado=''; authMsg=''">← Cambiar RUT</a>
+            </div>
+
+            <!-- Paso 3 -->
+            <div x-show="rec.paso===3">
+                <div class="success-chip"><span style="font-size:18px">✅</span> Identidad verificada correctamente</div>
+                <input type="password" x-model="rec.nueva"     placeholder="Nueva contraseña">
+                <input type="password" x-model="rec.confirmar" placeholder="Confirmar nueva contraseña">
+                <button class="btn btn-green btn-block" @click="recPaso3()">Guardar Nueva Contraseña ✓</button>
+            </div>
+        </div>
+
+        <p class="msg" x-text="authMsg" :style="'color:'+authMsgColor"></p>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL — NUEVO INCIDENTE
+══════════════════════════════════════ -->
+<div x-cloak x-show="modalIncidente" class="modal-overlay" @click.self="modalIncidente=false">
+    <div class="modal-box lg">
+        <button class="close-btn" @click="modalIncidente=false">✕</button>
+        <h2 class="modal-title">Reportar Nuevo Incidente</h2>
+
+        <!-- Manual banner -->
+        <div x-show="manualBanner && !manualBannerIgnorado" class="manual-banner">
+            <strong>📖 Existe un manual para este tipo de equipo</strong>
+            <p>Antes de generar el ticket, ¿revisaste el manual? Puede que encuentres la solución.</p>
+            <button class="btn btn-orange btn-pill" @click="window.open(manualUrl,'_blank')">Ver Manual</button>
+            <button class="btn btn-gray btn-pill"   style="margin-left:8px" @click="manualBannerIgnorado=true">Continuar igual</button>
+        </div>
+
+        <label>Piso:</label>
+        <select x-model="inc.piso">
+            <option value="">-- Seleccione un piso --</option>
+            <option>Subterráneo</option>
+            <option>Piso 1</option>
+            <option>Piso 2</option>
+            <option>Piso 3</option>
+        </select>
+
+        <label>Habitación / Área:</label>
+        <select x-model="inc.habitacion">
+            <option value="">-- Seleccione un área --</option>
+            <option>Recepción</option>
+            <option>Box de Atención</option>
+            <option>Oficina Administrativa</option>
+            <option>Sala de Servidores</option>
+        </select>
+
+        <label>Objeto o aparato:</label>
+        <select x-model="inc.aparato" @change="verificarManual()">
+            <option value="">-- Seleccione un aparato --</option>
+            <option>Computador/Hardware</option>
+            <option>Impresora</option>
+            <option>Teléfono IP</option>
+            <option>Sistema/Software</option>
+            <option>Red/Internet</option>
+        </select>
+
+        <label>Descripción del incidente:</label>
+        <textarea x-model="inc.descripcion" placeholder="Describe aquí qué está fallando..."></textarea>
+
+        <button class="btn btn-green btn-block" @click="enviarIncidente()">Generar Ticket</button>
+        <p class="msg" x-text="incMsg" :style="'color:'+incMsgColor"></p>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL — EDITAR PERFIL
+══════════════════════════════════════ -->
+<div x-cloak x-show="modalPerfil" class="modal-overlay" @click.self="modalPerfil=false">
+    <div class="modal-box">
+        <button class="close-btn" @click="modalPerfil=false">✕</button>
+        <h3 class="modal-title">Editar Perfil</h3>
+
+        <label>Nombre completo:</label>
+        <input type="text" x-model="perfil.nombre" placeholder="Tu nombre">
+
+        <label>Correo electrónico <span style="font-weight:normal;font-size:11px;color:#666">(Opcional)</span>:</label>
+        <input type="email" x-model="perfil.correo" placeholder="Tu correo">
+
+        <div style="border-top:1px solid #ccc;margin-top:14px;padding-top:12px">
+            <label>Cambiar Contraseña <span style="font-weight:normal;font-size:11px;color:#666">(Opcional)</span>:</label>
+
+            <div x-show="perfil.metodo==='actual'">
+                <input type="password" x-model="perfil.passActual" placeholder="Contraseña actual">
+                <a href="#" style="display:block;text-align:right;font-size:12px;color:var(--blue);margin-bottom:4px"
+                   @click.prevent="solicitarCodigoEdicion()">Olvidé mi contraseña (usar código)</a>
+            </div>
+            <div x-show="perfil.metodo==='codigo'">
+                <p style="font-size:12px;color:#555;margin:4px 0">Ingresa el código enviado a tu correo.</p>
+                <input type="text" x-model="perfil.codigo" placeholder="Código de 6 dígitos" maxlength="6">
+                <a href="#" style="display:block;text-align:right;font-size:12px;color:var(--blue);margin-bottom:4px"
+                   @click.prevent="perfil.metodo='actual'">Volver a usar contraseña actual</a>
+            </div>
+
+            <input type="password" x-model="perfil.passNueva" placeholder="Nueva Contraseña">
+        </div>
+
+        <button class="btn btn-green btn-block" @click="guardarPerfil()">Guardar Cambios</button>
+        <p class="msg" x-text="perfilMsg" :style="'color:'+perfilMsgColor"></p>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL — MANUALES
+══════════════════════════════════════ -->
+<div x-cloak x-show="modalManuales" class="modal-overlay" @click.self="modalManuales=false">
+    <div class="modal-box lg">
+        <button class="close-btn" @click="modalManuales=false">✕</button>
+        <h2 class="modal-title">📄 Manuales de Equipos</h2>
+
+        <!-- Upload zone (admin only) -->
+        <div x-show="usuario && usuario.permisos==='si'">
+            <div
+                class="drop-zone"
+                :class="dropOver?'drag-over':''"
+                @click="$refs.manualInput.click()"
+                @dragover.prevent="dropOver=true"
+                @dragleave="dropOver=false"
+                @drop.prevent="onDropManual($event)"
+            >
+                <span class="drop-icon">📂</span>
+                <p style="margin:5px 0;color:#2a6d8a;font-weight:bold">Haz clic o arrastra un PDF aquí</p>
+                <small style="color:#888">Solo archivos PDF — Máximo 50 MB</small>
+            </div>
+            <input type="file" x-ref="manualInput" accept="application/pdf" style="display:none" @change="subirManual($event)">
+            <p class="msg" x-text="manualMsg" :style="'color:'+manualMsgColor"></p>
+        </div>
+
+        <p class="section-title">Manuales disponibles</p>
+
+        <div x-show="manuales.length===0 && !manualCargando" style="text-align:center;color:#888;font-size:13px">
+            No hay manuales disponibles aún.
+        </div>
+        <div x-show="manualCargando" style="text-align:center;color:#888;padding:20px">Cargando...</div>
+
+        <template x-for="m in manuales" :key="m.filename">
+            <div class="manual-item">
+                <div>
+                    <div class="manual-name" x-text="'📄 ' + m.nombre"></div>
+                    <div class="manual-meta" x-text="m.tamañoMb + ' MB | Subido: ' + m.fecha"></div>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <a :href="m.url" target="_blank" style="text-decoration:none">
+                        <button class="btn btn-blue btn-pill">Ver / Descargar</button>
+                    </a>
+                    <button x-show="usuario && usuario.permisos==='si'"
+                            class="btn btn-red btn-pill"
+                            @click="eliminarManual(m.filename)">Eliminar</button>
+                </div>
+            </div>
+        </template>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL — ESTADÍSTICAS
+══════════════════════════════════════ -->
+<div x-cloak x-show="modalStats" class="stats-overlay" @click.self="cerrarStats()">
+    <div class="stats-box">
+        <div class="stats-header">
+            <div style="display:flex;align-items:center;gap:12px">
+                <span style="font-size:22px">📊</span>
+                <div>
+                    <div style="font-size:16px;font-weight:bold">Panel de Estadísticas</div>
+                    <div style="font-size:11px;color:#a0b0c0;margin-top:2px">Vista exclusiva para administradores</div>
+                </div>
+            </div>
+            <button style="background:none;border:none;color:#ccc;font-size:24px;cursor:pointer;font-weight:bold" @click="cerrarStats()">✕</button>
+        </div>
+        <div class="stats-body">
+            <div x-show="statsCargando" style="text-align:center;padding:50px;color:#888">
+                <div style="font-size:36px;margin-bottom:12px">⏳</div>
+                <div>Cargando estadísticas...</div>
+            </div>
+            <div x-show="statsError" style="text-align:center;padding:50px;color:var(--red)">
+                <div style="font-size:36px;margin-bottom:12px">⚠️</div>
+                <div>Error al cargar las estadísticas.</div>
+            </div>
+            <div x-show="!statsCargando && !statsError">
+                <div class="stats-cards" id="statsCards"></div>
+                <div class="stats-row">
+                    <div class="chart-card"><h3>🖥️ Por tipo de equipo</h3><div class="chart-wrap"><canvas id="chartAparato"></canvas></div></div>
+                    <div class="chart-card"><h3>🏢 Por piso / ubicación</h3><div class="chart-wrap"><canvas id="chartPiso"></canvas></div></div>
+                </div>
+                <div class="stats-row">
+                    <div class="chart-card"><h3>⚡ Estado actual</h3><div class="chart-wrap"><canvas id="chartEstado"></canvas></div></div>
+                    <div class="chart-card"><h3>👤 Top 6 usuarios</h3><div class="chart-wrap"><canvas id="chartCreador"></canvas></div></div>
+                </div>
+                <div class="chart-card">
+                    <h3>✅ Resueltos por semana — últimas 8 semanas</h3>
+                    <div class="chart-wrap" id="wrapSemanas"><canvas id="chartSemanas"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     FLOATING DETAIL WINDOW
+══════════════════════════════════════ -->
+<div x-cloak x-show="modalDetalle" class="detail-overlay">
+    <div
+        class="detail-window"
+        :class="detWin.maximized?'maximized':(detWin.minimized?'minimized':'')"
+        x-ref="detWin"
+        id="detailWindow"
+    >
+        <div class="detail-header" id="detailHeader">
+            <span class="detail-header-title" x-text="detWin.headerTitle"></span>
+            <div style="display:flex;align-items:center">
+                <span class="win-ctrl" @click="toggleMinimize()" title="Minimizar">_</span>
+                <span class="win-ctrl" @click="toggleMaximize()" title="Maximizar" x-text="detWin.maximized?'❐':'□'"></span>
+                <span class="win-ctrl close" @click="cerrarDetalle()" title="Cerrar">✕</span>
+            </div>
+        </div>
+
+        <div class="detail-body" x-show="!detWin.minimized">
+            <!-- Top row -->
+            <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ccc;padding-bottom:10px;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+                <div class="action-row">
+                    <h2 style="margin:0;font-size:20px" x-text="'Ticket ' + (detTicket.id_ticket||'')"></h2>
+                    <template x-if="detTicket.estado!=='Resuelto' && detTicket.estado!=='Cancelado'">
+                        <div class="action-row">
+                            <button x-show="esAdmin && detTicket.estado==='En espera'"
+                                    class="btn btn-green btn-pill" @click="accionTicket('continuar')">Continuar</button>
+                            <button x-show="esAdmin && detTicket.estado!=='En espera'"
+                                    class="btn btn-yellow btn-pill" @click="accionTicket('espera')">En Espera</button>
+                            <button x-show="esAdmin"
+                                    class="btn btn-green btn-pill" @click="accionTicket('resolver')">✅ Resolver</button>
+                            <button x-show="puedeEscribir"
+                                    class="btn btn-gray btn-pill" @click="accionTicket('cancelar')">Cancelar</button>
+                        </div>
+                    </template>
+                    <button class="btn btn-red btn-pill" @click="exportarPDF()">📄 PDF</button>
+                </div>
+                <span class="badge-estado" :class="claseEstado(detTicket.estado||'')" x-text="detTicket.estado||'En curso'"></span>
+            </div>
+
+            <!-- Info block -->
+            <div class="ticket-info-block">
+                <p><strong>Creador:</strong> <span x-text="detTicket.creador"></span> &nbsp;|&nbsp; <strong>Fecha:</strong> <span x-text="detTicket.fecha"></span></p>
+                <p><strong>Ubicación:</strong> <span x-text="(detTicket.piso||'S/I') + ' — ' + (detTicket.habitacion||'S/I')"></span></p>
+                <p><strong>Aparato:</strong> <span x-text="detTicket.aparato"></span></p>
+                <p><strong>Técnico asignado:</strong> <span style="color:var(--accent);font-weight:bold" x-text="detTicket.tecnico_asignado||'Sin asignar'"></span></p>
+                <p><strong>Descripción:</strong> <span x-text="detTicket.descripcion"></span></p>
+            </div>
+
+            <!-- Comments -->
+            <p class="section-title">Bitácora de Seguimiento</p>
+            <div class="comments-area" id="commentsArea">
+                <template x-if="detComentarios.length===0">
+                    <p style="color:#888;font-size:13px;font-style:italic">Sin actualizaciones.</p>
+                </template>
+                <template x-for="(c,i) in detComentarios" :key="i">
+                    <div class="comment-box" :class="c.texto && c.texto.startsWith('📋')?'bitacora':''">
+                        <div class="comment-meta"><strong x-text="c.usuario"></strong> el <span x-text="c.fecha"></span></div>
+                        <div class="comment-text" x-html="c.texto"></div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Controls -->
+            <div x-show="detTicket.estado!=='Resuelto' && detTicket.estado!=='Cancelado'" class="controls-bar">
+                <textarea x-model="detComentarioNuevo" placeholder="Escribe aquí tu actualización o respuesta..."></textarea>
+                <div x-show="puedeEscribir" style="margin-top:8px">
+                    <label style="font-size:12px;color:#555">Adjuntar archivo (Imagen, Doc) — Máx 10MB:</label>
+                    <input type="file" x-ref="adjunto" style="margin-top:4px;font-size:12px;padding:4px;border:1px solid #ccc;border-radius:4px;width:100%">
+                </div>
+                <div class="footer">
+                    <button class="btn btn-blue btn-pill" style="padding:7px 22px" @click="publicarComentario()">Publicar</button>
+                </div>
+            </div>
+            <p class="msg" x-text="detMsg" :style="'color:'+detMsgColor"></p>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     CUSTOM PROMPT MODAL
+══════════════════════════════════════ -->
+<div x-cloak x-show="prompt.open" class="modal-overlay">
+    <div class="modal-box sm">
+        <p style="font-size:15px;font-weight:bold;margin:0 0 12px" x-text="prompt.titulo"></p>
+        <textarea x-model="prompt.valor" style="height:60px;font-size:14px" :placeholder="prompt.placeholder||'Escribe aquí...'"></textarea>
+        <p x-show="prompt.error" style="color:var(--red);font-size:12px;margin:6px 0 0">No puedes dejar este campo vacío.</p>
+        <div style="display:flex;gap:10px;margin-top:14px">
+            <button class="btn btn-gray" style="flex:1" @click="prompt.resolve(null)">Cancelar</button>
+            <button class="btn btn-green" style="flex:1" @click="confirmPrompt()">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     CUSTOM ALERT MODAL
+══════════════════════════════════════ -->
+<div x-cloak x-show="alerta.open" class="modal-overlay">
+    <div class="modal-box sm">
+        <h3 style="margin:0 0 10px;font-size:16px;color:#333" x-text="alerta.titulo||'Aviso'"></h3>
+        <p style="font-size:14px;color:#555" x-text="alerta.msg"></p>
+        <button class="btn btn-blue btn-block" style="margin-top:14px" @click="alerta.open=false">Aceptar</button>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     ALPINE.JS APP
+══════════════════════════════════════ -->
+<script>
+function app() {
+    return {
+        // ── Session ──
+        usuario: null,
+        sessionDisplaced: false,
+        heartbeatTimer: null,
+
+        // ── UI state ──
+        profileOpen: false,
+        notifOpen: false,
+        modalAuth: false,
+        modalIncidente: false,
+        modalPerfil: false,
+        modalManuales: false,
+        modalStats: false,
+        modalDetalle: false,
+
+        // ── Auth ──
+        authTab: 'login',
+        authMsg: '',
+        authMsgColor: 'red',
+        login: { rut: '', pass: '' },
+        reg:   { nombre: '', rut: '', correo: '', pass: '' },
+        rec:   { paso: 1, rut: '', correoHint: '', codigo: '', codigoEstado: '', nueva: '', confirmar: '', reenviarCooldown: 0, verificado: false },
+
+        // ── Tickets ──
+        modo: 'vacio',        // 'vacio' | 'busqueda' | 'mistickets' | 'historial'
+        cargando: false,
+        listaTickets: [],
+        incidentesActivos: [],
+        histBannerText: '',
+        msgVacio: '',
+        busqueda: '',
+        busquedaTimer: null,
+
+        // ── Notifications ──
+        notifCreador: [],
+        notifTecnico: [],
+        get notifTotal() { return this.notifCreador.length + this.notifTecnico.length; },
+
+        // ── Nuevo incidente ──
+        inc: { piso:'', habitacion:'', aparato:'', descripcion:'' },
+        incMsg: '',
+        incMsgColor: 'red',
+        manualBanner: false,
+        manualBannerIgnorado: false,
+        manualUrl: '',
+        manualesCache: [],
+
+        // ── Perfil ──
+        perfil: { nombre:'', correo:'', passActual:'', passNueva:'', codigo:'', metodo:'actual' },
+        perfilMsg: '',
+        perfilMsgColor: 'red',
+
+        // ── Manuales ──
+        manuales: [],
+        manualCargando: false,
+        manualMsg: '',
+        manualMsgColor: 'green',
+        dropOver: false,
+
+        // ── Stats ──
+        statsCargando: false,
+        statsError: false,
+        chartsStats: {},
+
+        // ── Detail window ──
+        detTicket: {},
+        detComentarios: [],
+        detComentarioNuevo: '',
+        detMsg: '',
+        detMsgColor: 'red',
+        detWin: { maximized:false, minimized:false, headerTitle:'Cargando...' },
+        get esAdmin() { return this.usuario && this.usuario.permisos === 'si'; },
+        get puedeEscribir() {
+            if (!this.usuario || !this.detTicket) return false;
+            return this.esAdmin ||
+                   this.usuario.nombre === this.detTicket.creador ||
+                   this.usuario.nombre === this.detTicket.tecnico_asignado;
+        },
+
+        // ── Custom prompt / alert ──
+        prompt: { open:false, titulo:'', valor:'', placeholder:'', error:false, resolve: null },
+        alerta: { open:false, titulo:'', msg:'' },
+
+        // ════════════════════════════════════
+        // INIT
+        // ════════════════════════════════════
+        init() {
+            const saved = localStorage.getItem('usuario_actual');
+            if (saved) {
+                this.usuario = JSON.parse(saved);
+                this.$nextTick(() => this.cargarActivosBackground());
+                this.iniciarHeartbeat();
+            }
+            this.initDrag();
+        },
+
+        // ════════════════════════════════════
+        // HEARTBEAT
+        // ════════════════════════════════════
+        iniciarHeartbeat() {
+            if (this.heartbeatTimer) clearInterval(this.heartbeatTimer);
+            this.heartbeatTimer = setInterval(async () => {
+                if (!this.usuario) { clearInterval(this.heartbeatTimer); return; }
+                try {
+                    const r = await fetch('/sesion/verificar', {
+                        method: 'POST', headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ rut: this.usuario.rut, token: this.usuario.token })
+                    });
+                    const d = await r.json();
+                    if (!d.valida) {
+                        clearInterval(this.heartbeatTimer);
+                        localStorage.removeItem('usuario_actual');
+                        this.usuario = null;
+                        this.sessionDisplaced = true;
+                        this.modo = 'vacio';
+                    }
+                } catch(e) {}
+            }, 10000);
+        },
+
+        // ════════════════════════════════════
+        // HELPERS
+        // ════════════════════════════════════
+        rutValido(rut) {
+            if (!rut || typeof rut !== 'string') return false;
+            rut = rut.trim().toUpperCase();
+            if (!/^\d{7,9}-[\dK]$/.test(rut)) return false;
+            const [cuerpo, dvIngresado] = rut.split('-');
+            let suma = 0, mul = 2;
+            for (let i = cuerpo.length - 1; i >= 0; i--) {
+                suma += parseInt(cuerpo[i]) * mul;
+                mul = mul === 7 ? 2 : mul + 1;
+            }
+            const r = 11 - (suma % 11);
+            const dv = r === 11 ? '0' : r === 10 ? 'K' : String(r);
+            return dvIngresado === dv;
+        },
+
+        colorEstado(e) {
+            const m = { 'Resuelto':'#28a745','En espera':'#ffc107','Cancelado':'#6c757d','Pendiente':'#fd7e14' };
+            return m[e] || '#007bff';
+        },
+
+        claseEstado(e) {
+            const m = { 'Resuelto':'s-resuelto','En espera':'s-espera','Cancelado':'s-cancelado','Pendiente':'s-pendiente' };
+            return m[e] || 's-curso';
+        },
+
+        setMsg(field, color, texto) {
+            this[field + 'MsgColor'] = color;
+            this[field + 'Msg']      = texto;
+        },
+
+        // ════════════════════════════════════
+        // PROMPT / ALERT
+        // ════════════════════════════════════
+        pedirTexto(titulo, placeholder = '') {
+            return new Promise(resolve => {
+                this.prompt = { open:true, titulo, valor:'', placeholder, error:false, resolve };
+            });
+        },
+        confirmPrompt() {
+            if (!this.prompt.valor.trim()) { this.prompt.error = true; return; }
+            const val = this.prompt.valor;
+            this.prompt.open = false;
+            this.prompt.resolve(val);
+        },
+        mostrarAlerta(msg, titulo = 'Aviso') {
+            this.alerta = { open:true, titulo, msg };
+        },
+
+        // ════════════════════════════════════
+        // AUTH — LOGIN / LOGOUT
+        // ════════════════════════════════════
+        async iniciarSesion() {
+            if (!this.login.rut || !this.login.pass) return this.setMsg('auth','red','Llena todos los campos');
+            this.setMsg('auth','blue','Iniciando sesión...');
+            try {
+                const r = await fetch('/login', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut: this.login.rut, password: this.login.pass }) });
+                const d = await r.json();
+                if (r.ok) {
+                    this.usuario = { nombre:d.nombre, permisos:d.permisos, rut:d.rut, correo:d.correo, token:d.token };
+                    localStorage.setItem('usuario_actual', JSON.stringify(this.usuario));
+                    this.modalAuth = false;
+                    this.login.pass = '';
+                    this.authMsg = '';
+                    this.cargarActivosBackground();
+                    this.iniciarHeartbeat();
+                } else { this.setMsg('auth','red', d.error); }
+            } catch(e) { this.setMsg('auth','red','Error de conexión'); }
+        },
+
+        async registrar() {
+            const { nombre, rut, correo, pass } = this.reg;
+            if (!nombre) return this.setMsg('auth','red','El nombre es obligatorio');
+            if (!pass)   return this.setMsg('auth','red','La contraseña es obligatoria');
+            if (!this.rutValido(rut)) return this.setMsg('auth','red','RUT inválido (módulo 11)');
+            this.setMsg('auth','blue','Registrando...');
+            try {
+                const r = await fetch('/registro', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ nombre, rut, correo, password: pass }) });
+                const d = await r.json();
+                if (r.ok) {
+                    this.setMsg('auth','green', d.message);
+                    setTimeout(() => {
+                        this.authTab = 'login';
+                        this.authMsg = '';
+                        this.reg = { nombre:'', rut:'', correo:'', pass:'' };
+                    }, 2500);
+                } else { this.setMsg('auth','red', d.error); }
+            } catch(e) { this.setMsg('auth','red','Error de conexión'); }
+        },
+
+        cerrarSesion() {
+            if (this.usuario) {
+                fetch('/sesion/cerrar', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut:this.usuario.rut, token:this.usuario.token }) }).catch(()=>{});
+            }
+            if (this.heartbeatTimer) clearInterval(this.heartbeatTimer);
+            localStorage.removeItem('usuario_actual');
+            this.usuario = null;
+            this.modo = 'vacio';
+            this.listaTickets = [];
+        },
+
+        switchRegistro() {
+            this.authTab = 'registro';
+            this.reg = { nombre:'', rut:'', correo:'', pass:'' };
+            this.authMsg = '';
+        },
+
+        // ════════════════════════════════════
+        // AUTH — RECOVERY
+        // ════════════════════════════════════
+        iniciarRecovery() {
+            this.authTab = 'recover';
+            this.rec = { paso:1, rut:'', correoHint:'', codigo:'', codigoEstado:'', nueva:'', confirmar:'', reenviarCooldown:0, verificado:false };
+            this.authMsg = '';
+        },
+
+        async recPaso1() {
+            if (!this.rec.rut.trim()) return this.setMsg('auth','red','Ingresa tu RUT');
+            this.setMsg('auth','blue','Enviando código...');
+            try {
+                const r = await fetch('/recuperar-solicitar', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut: this.rec.rut }) });
+                const d = await r.json();
+                if (r.ok) {
+                    this.rec.correoHint = d.correoHint ? `📧 Código enviado a ${d.correoHint}` : '📧 Código enviado a tu correo.';
+                    this.rec.paso = 2;
+                    this.setMsg('auth','green','Código enviado. Revisa tu correo.');
+                } else { this.setMsg('auth','red', d.error); }
+            } catch(e) { this.setMsg('auth','red','Error de conexión'); }
+        },
+
+        async reenviarCodigo() {
+            if (this.rec.reenviarCooldown > 0) return;
+            this.rec.codigo = ''; this.rec.codigoEstado = '';
+            try {
+                await fetch('/recuperar-solicitar', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut: this.rec.rut }) });
+                this.setMsg('auth','green','Nuevo código enviado.');
+            } catch(e) {}
+            this.rec.reenviarCooldown = 30;
+            const t = setInterval(() => {
+                this.rec.reenviarCooldown--;
+                if (this.rec.reenviarCooldown <= 0) clearInterval(t);
+            }, 1000);
+        },
+
+        async recPaso2() {
+            if (this.rec.codigo.length < 6) return;
+            this.setMsg('auth','','');
+            try {
+                const r = await fetch('/recuperar-verificar', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut: this.rec.rut, codigo: this.rec.codigo }) });
+                if (r.ok) {
+                    this.rec.codigoEstado = 'ok';
+                    this.rec.verificado   = true;
+                    setTimeout(() => { this.rec.paso = 3; }, 900);
+                } else {
+                    this.rec.codigoEstado = 'error';
+                    this.rec.verificado   = false;
+                }
+            } catch(e) { this.rec.codigoEstado = 'error'; }
+        },
+
+        async recPaso3() {
+            if (!this.rec.verificado) return this.setMsg('auth','red','El código no fue verificado.');
+            if (!this.rec.nueva || !this.rec.confirmar) return this.setMsg('auth','red','Completa ambos campos.');
+            if (this.rec.nueva !== this.rec.confirmar)  return this.setMsg('auth','red','Las contraseñas no coinciden.');
+            if (this.rec.nueva.length < 4)              return this.setMsg('auth','red','Mínimo 4 caracteres.');
+            this.setMsg('auth','blue','Guardando...');
+            try {
+                const r = await fetch('/recuperar-cambiar', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut: this.rec.rut, codigo: this.rec.codigo, nuevaPassword: this.rec.nueva }) });
+                const d = await r.json();
+                if (r.ok) {
+                    this.setMsg('auth','green','✅ Contraseña actualizada. Ya puedes iniciar sesión.');
+                    setTimeout(() => { this.authTab = 'login'; this.authMsg = ''; }, 2500);
+                } else { this.setMsg('auth','red', d.error); }
+            } catch(e) { this.setMsg('auth','red','Error de conexión'); }
+        },
+
+        // ════════════════════════════════════
+        // TICKETS — LOAD
+        // ════════════════════════════════════
+        async cargarActivosBackground() {
+            try {
+                const r = await fetch('/incidentes');
+                this.incidentesActivos = await r.json();
+                this.calcularNotificaciones();
+            } catch(e) {}
+        },
+
+        calcularNotificaciones() {
+            if (!this.usuario) { this.notifCreador=[]; this.notifTecnico=[]; return; }
+            this.notifCreador = this.incidentesActivos.filter(t =>
+                t.creador === this.usuario.nombre && t.notificacion_creador == 1);
+            this.notifTecnico = this.incidentesActivos.filter(t =>
+                t.tecnico_asignado === this.usuario.nombre && t.estado === 'Pendiente');
+        },
+
+        toggleNotif() {
+            this.notifOpen = !this.notifOpen;
+        },
+
+        onBusqueda() {
+            const q = this.busqueda.trim();
+            if (!q) { this.volverAVacio(); return; }
+            this.buscarEnBD(q);
+        },
+
+        async buscarEnBD(q) {
+            this.modo = 'busqueda';
+            this.cargando = true;
+            this.listaTickets = [];
+            try {
+                const r = await fetch(`/incidentes/buscar?q=${encodeURIComponent(q)}`);
+                this.listaTickets = await r.json();
+                this.msgVacio = 'No se encontraron tickets activos con ese criterio.';
+            } catch(e) { this.msgVacio = 'Error al buscar. Intenta de nuevo.'; }
+            this.cargando = false;
+        },
+
+        async verHistorial() {
+            if (!this.usuario) return;
+            this.modo = 'historial';
+            this.busqueda = '';
+            this.cargando = true;
+            this.listaTickets = [];
+            const esAdmin = this.usuario.permisos === 'si';
+            const url = `/incidentes/cerrados?usuario=${encodeURIComponent(this.usuario.nombre)}&esAdmin=${esAdmin?'si':'no'}`;
+            try {
+                const r = await fetch(url);
+                const data = await r.json();
+                this.listaTickets = data;
+                this.histBannerText = esAdmin
+                    ? `📁 Historial — todos los tickets cerrados (${data.length})`
+                    : `📁 Historial — tus tickets resueltos y cancelados (${data.length})`;
+                this.msgVacio = 'No hay tickets resueltos o cancelados aún.';
+            } catch(e) { this.msgVacio = 'Error al cargar el historial.'; }
+            this.cargando = false;
+        },
+
+        async verMisTickets() {
+            if (!this.usuario) return;
+            this.modo = 'mistickets';
+            this.busqueda = '';
+            this.cargando = true;
+            this.listaTickets = [];
+            try {
+                const r = await fetch('/incidentes');
+                const todos = await r.json();
+                this.incidentesActivos = todos;
+                this.calcularNotificaciones();
+                this.listaTickets = todos.filter(t => t.creador === this.usuario.nombre);
+                this.msgVacio = 'No tienes tickets activos. Usa "Historial de tickets" para ver los cerrados.';
+            } catch(e) { this.msgVacio = 'Error al cargar tus tickets.'; }
+            this.cargando = false;
+        },
+
+        volverAVacio() {
+            this.modo = 'vacio';
+            this.listaTickets = [];
+            this.busqueda = '';
+        },
+
+        async refrescarVista() {
+            await this.cargarActivosBackground();
+            if      (this.modo === 'historial')  await this.verHistorial();
+            else if (this.modo === 'mistickets') await this.verMisTickets();
+            else if (this.modo === 'busqueda' && this.busqueda.trim()) await this.buscarEnBD(this.busqueda.trim());
+        },
+
+        // ════════════════════════════════════
+        // INCIDENTE — CREATE
+        // ════════════════════════════════════
+        resetIncidente() {
+            this.inc = { piso:'', habitacion:'', aparato:'', descripcion:'' };
+            this.incMsg = '';
+            this.manualBanner = false;
+            this.manualBannerIgnorado = false;
+        },
+
+        async verificarManual() {
+            this.manualBanner = false;
+            this.manualBannerIgnorado = false;
+            this.manualUrl = '';
+            if (!this.inc.aparato) return;
+            if (!this.manualesCache.length) {
+                try { const r = await fetch('/manuales'); this.manualesCache = await r.json(); } catch(e) {}
+            }
+            const norm = s => s.toLowerCase().replace(/[^a-záéíóúñ0-9]/g,'');
+            const ap   = norm(this.inc.aparato);
+            const found = this.manualesCache.find(m => {
+                const n = norm(m.nombre);
+                return n.includes(ap) || ap.includes(n.replace('.pdf',''));
+            });
+            if (found) { this.manualUrl = found.url; this.manualBanner = true; }
+        },
+
+        async enviarIncidente() {
+            if (this.manualBanner && !this.manualBannerIgnorado) {
+                this.setMsg('inc','orange','Por favor lee el manual primero, o haz clic en "Continuar igual".');
+                return;
+            }
+            const { piso, habitacion, aparato, descripcion } = this.inc;
+            if (!descripcion.trim()) return this.setMsg('inc','red','La descripción es obligatoria');
+            if (!piso || !habitacion || !aparato) return this.setMsg('inc','red','Completa todos los campos.');
+            this.setMsg('inc','blue','Generando ticket...');
+            try {
+                const r = await fetch('/incidente', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ creador: this.usuario.nombre, piso, habitacion, aparato, descripcion }) });
+                const d = await r.json();
+                if (r.ok) {
+                    this.setMsg('inc','green', d.message);
+                    setTimeout(() => {
+                        this.modalIncidente = false;
+                        this.resetIncidente();
+                        this.cargarActivosBackground();
+                    }, 2000);
+                } else { this.setMsg('inc','red','Error al crear el incidente'); }
+            } catch(e) { this.setMsg('inc','red','Error de conexión'); }
+        },
+
+        // ════════════════════════════════════
+        // PERFIL
+        // ════════════════════════════════════
+        abrirEditarPerfil() {
+            this.perfil = {
+                nombre:     this.usuario.nombre,
+                correo:     this.usuario.correo || '',
+                passActual: '', passNueva: '', codigo: '', metodo: 'actual'
+            };
+            this.perfilMsg = '';
+            this.modalPerfil = true;
+        },
+
+        async solicitarCodigoEdicion() {
+            const correo = this.perfil.correo || this.usuario.correo;
+            if (!correo) return this.setMsg('perfil','red','No tienes un correo registrado.');
+            this.setMsg('perfil','blue','Enviando código...');
+            try {
+                const r = await fetch('/recuperar-solicitar', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut: this.usuario.rut }) });
+                const d = await r.json();
+                if (r.ok) {
+                    this.perfil.metodo = 'codigo';
+                    this.setMsg('perfil','green','Código enviado al correo.');
+                } else { this.setMsg('perfil','red', d.error); }
+            } catch(e) { this.setMsg('perfil','red','Error de conexión'); }
+        },
+
+        async guardarPerfil() {
+            if (!this.perfil.nombre) return this.setMsg('perfil','red','El nombre es obligatorio');
+            const { nombre, correo, passActual, passNueva, codigo } = this.perfil;
+            if (passNueva && !passActual && !codigo) return this.setMsg('perfil','red','Ingresa tu contraseña actual o un código.');
+            if (passNueva && codigo) {
+                this.setMsg('perfil','blue','Verificando código...');
+                const rv = await fetch('/recuperar-verificar', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut: this.usuario.rut, codigo }) });
+                if (!rv.ok) { const dv = await rv.json(); return this.setMsg('perfil','red', dv.error || 'Código incorrecto.'); }
+            }
+            this.setMsg('perfil','blue','Guardando cambios...');
+            try {
+                const r = await fetch('/editar-perfil', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ rut: this.usuario.rut, nombre, correo, passwordActual: passActual, passwordNueva: passNueva, codigo }) });
+                const d = await r.json();
+                if (r.ok) {
+                    this.setMsg('perfil','green','Perfil actualizado');
+                    this.usuario.nombre = nombre; this.usuario.correo = correo;
+                    localStorage.setItem('usuario_actual', JSON.stringify(this.usuario));
+                    setTimeout(() => { this.modalPerfil = false; }, 1500);
+                } else { this.setMsg('perfil','red', d.error); }
+            } catch(e) { this.setMsg('perfil','red','Error de conexión'); }
+        },
+
+        // ════════════════════════════════════
+        // MANUALES
+        // ════════════════════════════════════
+        async abrirManuales() {
+            this.manualMsg = '';
+            this.modalManuales = true;
+            await this.cargarManuales();
+        },
+
+        async cargarManuales() {
+            this.manualCargando = true;
+            try {
+                const r = await fetch('/manuales');
+                this.manuales = await r.json();
+                this.manualesCache = [...this.manuales];
+            } catch(e) { this.manuales = []; }
+            this.manualCargando = false;
+        },
+
+        onDropManual(e) {
+            this.dropOver = false;
+            const f = e.dataTransfer.files[0];
+            if (!f) return;
+            this.procesarManual(f);
+        },
+
+        subirManual(e) {
+            const f = e.target.files[0];
+            if (!f) return;
+            this.procesarManual(f);
+        },
+
+        async procesarManual(f) {
+            if (f.type !== 'application/pdf') return this.setMsg('manual','red','Solo se permiten PDFs.');
+            if (f.size > 50*1024*1024) return this.setMsg('manual','red','El archivo excede 50 MB.');
+            this.setMsg('manual','blue','Subiendo manual...');
+            const fd = new FormData(); fd.append('manual', f);
+            try {
+                const r = await fetch('/manuales/subir', { method:'POST', body: fd });
+                const d = await r.json();
+                if (r.ok) {
+                    this.setMsg('manual','green', `✅ ${d.message}`);
+                    this.manualesCache = [];
+                    await this.cargarManuales();
+                } else { this.setMsg('manual','red', d.error || 'Error al subir'); }
+            } catch(e) { this.setMsg('manual','red','Error de conexión'); }
+        },
+
+        async eliminarManual(filename) {
+            const val = await this.pedirTexto('Escribe "confirmar" para eliminar este manual:');
+            if (!val || val.toLowerCase() !== 'confirmar') { this.mostrarAlerta('Eliminación cancelada.'); return; }
+            try {
+                const r = await fetch(`/manuales/${encodeURIComponent(filename)}`, { method:'DELETE' });
+                const d = await r.json();
+                if (r.ok) {
+                    this.setMsg('manual','green','Manual eliminado.');
+                    this.manualesCache = [];
+                    await this.cargarManuales();
+                } else { this.setMsg('manual','red', d.error || 'Error al eliminar'); }
+            } catch(e) { this.setMsg('manual','red','Error de conexión'); }
+        },
+
+        // ════════════════════════════════════
+        // DETAIL WINDOW
+        // ════════════════════════════════════
+        async abrirDetalle(idTicket, ticketPrecargado) {
+            let ticket = this.incidentesActivos.find(t => t.id_ticket === idTicket) || ticketPrecargado;
+            if (!ticket) return;
+
+            this.detTicket         = ticket;
+            this.detComentarioNuevo = '';
+            this.detMsg            = '';
+            this.detWin.headerTitle = `TICKET: ${ticket.id_ticket} — ${ticket.aparato}`;
+
+            try {
+                const r = await fetch('/incidente/ver', { method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ id_ticket: idTicket, usuario: this.usuario.nombre }) });
+                const d = await r.json();
+                if (d.cambio) { ticket.estado = 'En curso'; this.calcularNotificaciones(); }
+                if (d.notifLimpiada) { ticket.notificacion_creador = 0; this.calcularNotificaciones(); }
+            } catch(e) {}
+
+            try {
+                const c = JSON.parse(ticket.comentarios || '[]');
+                this.detComentarios = c;
+            } catch(e) { this.detComentarios = []; }
+
+            if (this.detWin.minimized) this.detWin.minimized = false;
+            this.modalDetalle = true;
+            this.$nextTick(() => {
+                const area = document.getElementById('commentsArea');
+                if (area) area.scrollTop = 0;
+            });
+        },
+
+        cerrarDetalle() {
+            this.modalDetalle = false;
+            this.detWin.maximized = false;
+            this.detWin.minimized = false;
+            const w = document.getElementById('detailWindow');
+            if (w) {
+                w.style.top='50%'; w.style.left='50%';
+                w.style.transform='translate(-50%,-50%)';
+                w.style.width='720px'; w.style.height='86vh';
+            }
+        },
+
+        toggleMaximize() { this.detWin.maximized = !this.detWin.maximized; if (this.detWin.maximized) this.detWin.minimized = false; },
+        toggleMinimize() { this.detWin.minimized = !this.detWin.minimized; if (this.detWin.minimized) this.detWin.maximized = false; },
+
+        initDrag() {
+            this.$nextTick(() => {
+                const header = document.getElementById('detailHeader');
+                const win    = document.getElementById('detailWindow');
+                if (!header || !win) return;
+                let isDragging=false, sx,sy,il,it;
+                header.addEventListener('mousedown', e => {
+                    if (win.classList.contains('maximized') || win.classList.contains('minimized')) return;
+                    isDragging = true;
+                    const r = win.getBoundingClientRect();
+                    win.style.transform='none'; win.style.left=r.left+'px'; win.style.top=r.top+'px';
+                    sx=e.clientX; sy=e.clientY; il=r.left; it=r.top;
+                });
+                document.addEventListener('mousemove', e => {
+                    if (!isDragging) return;
+                    win.style.left=(il+(e.clientX-sx))+'px';
+                    win.style.top=(it+(e.clientY-sy))+'px';
+                });
+                document.addEventListener('mouseup', ()=>{ isDragging=false; });
+            });
+        },
+
+        // ════════════════════════════════════
+        // COMENTAR
+        // ════════════════════════════════════
+        async publicarComentario() {
+            const texto  = this.detComentarioNuevo;
+            const adjRef = this.$refs.adjunto;
+            const file   = adjRef && adjRef.files[0];
+            if (!texto.trim() && !file) return this.setMsg('det','red','Escribe un comentario o adjunta un archivo.');
+            if (file && file.size > 10*1024*1024) return this.setMsg('det','red','El archivo excede 10 MB.');
+            this.setMsg('det','blue','Publicando...');
+            const fd = new FormData();
+            fd.append('id_ticket', this.detTicket.id_ticket);
+            fd.append('usuario',   this.usuario.nombre);
+            fd.append('texto',     texto);
+            if (file) fd.append('archivo', file);
+            try {
+                const r = await fetch('/incidente/comentar', { method:'POST', body: fd });
+                const d = await r.json();
+                if (r.ok) {
+                    this.detComentarios    = d.comentarios;
+                    this.detTicket.comentarios = JSON.stringify(d.comentarios);
+                    this.detComentarioNuevo = '';
+                    if (adjRef) adjRef.value = '';
+                    this.setMsg('det','green','Publicado exitosamente.');
+                    setTimeout(() => { this.detMsg=''; }, 2000);
+                } else { this.setMsg('det','red', d.error || 'Error al publicar'); }
+            } catch(e) { this.setMsg('det','red','Error de conexión'); }
+        },
+
+        // ════════════════════════════════════
+        // TICKET ACTIONS
+        // ════════════════════════════════════
+        async accionTicket(tipo) {
+            const id     = this.detTicket.id_ticket;
+            const nombre = this.usuario.nombre;
+            let endpoint, body, nuevoEstado;
+
+            if (tipo === 'espera') {
+                const info = await this.pedirTexto('Motivo para poner en espera:');
+                if (!info) return;
+                endpoint = '/incidente/espera'; body = { id_ticket:id, usuario:nombre, info_espera:info }; nuevoEstado='En espera';
+            } else if (tipo === 'continuar') {
+                endpoint = '/incidente/continuar'; body = { id_ticket:id, usuario:nombre }; nuevoEstado='En curso';
+            } else if (tipo === 'cancelar') {
+                const info = await this.pedirTexto('Motivo por el cual se cancela el ticket:');
+                if (!info) return;
+                endpoint = '/incidente/cancelar'; body = { id_ticket:id, usuario:nombre, info_cancelar:info }; nuevoEstado='Cancelado';
+            } else if (tipo === 'resolver') {
+                const info = await this.pedirTexto('Descripción de la resolución:');
+                if (!info) return;
+                endpoint = '/incidente/resolver'; body = { id_ticket:id, usuario:nombre, info_resolucion:info }; nuevoEstado='Resuelto';
+            }
+
+            this.setMsg('det','blue','Actualizando...');
+            try {
+                const r = await fetch(endpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+                const d = await r.json();
+                if (r.ok) {
+                    this.detTicket.estado      = nuevoEstado;
+                    this.detComentarios        = d.comentarios;
+                    this.detTicket.comentarios = JSON.stringify(d.comentarios);
+                    const idx = this.incidentesActivos.findIndex(t => t.id_ticket === id);
+                    if (idx !== -1) { this.incidentesActivos[idx].estado = nuevoEstado; }
+                    this.setMsg('det','green','✅ Estado actualizado.');
+                    setTimeout(() => { this.refrescarVista(); this.detMsg=''; }, 1200);
+                } else { this.setMsg('det','red', d.error||'Error'); }
+            } catch(e) { this.setMsg('det','red','Error de conexión'); }
+        },
+
+        // ════════════════════════════════════
+        // ESTADÍSTICAS
+        // ════════════════════════════════════
+        async abrirEstadisticas() {
+            this.modalStats    = true;
+            this.statsCargando = true;
+            this.statsError    = false;
+            Object.values(this.chartsStats).forEach(c => { try { c.destroy(); } catch(e){} });
+            this.chartsStats = {};
+            try {
+                const r = await fetch('/estadisticas');
+                if (!r.ok) throw new Error();
+                const d = await r.json();
+                this.statsCargando = false;
+                await this.$nextTick();
+                this.renderStats(d);
+            } catch(e) {
+                this.statsCargando = false;
+                this.statsError    = true;
+            }
+        },
+
+        cerrarStats() {
+            this.modalStats = false;
+            Object.values(this.chartsStats).forEach(c => { try { c.destroy(); } catch(e){} });
+            this.chartsStats = {};
+        },
+
+        renderStats(d) {
+            // Tarjetas
+            const total = Object.values(d.porEstado).reduce((a,b)=>a+b,0);
+            const cards = [
+                { label:'Total tickets', valor:total,                       color:'#2c3e50', bg:'#ecf0f1' },
+                { label:'En curso',      valor:d.porEstado['En curso']||0,  color:'#007bff', bg:'#e8f4ff' },
+                { label:'Pendientes',    valor:d.porEstado['Pendiente']||0, color:'#fd7e14', bg:'#fff3e6' },
+                { label:'En espera',     valor:d.porEstado['En espera']||0, color:'#e0a800', bg:'#fff8e6' },
+                { label:'Resueltos',     valor:d.porEstado['Resuelto']||0,  color:'#28a745', bg:'#e8f8ed' },
+                { label:'Cancelados',    valor:d.porEstado['Cancelado']||0, color:'#6c757d', bg:'#f0f1f2' },
+            ];
+            document.getElementById('statsCards').innerHTML = cards.map(c =>
+                `<div class="stats-card" style="border-top-color:${c.color};background:${c.bg}">
+                    <div class="val" style="color:${c.color}">${c.valor}</div>
+                    <div class="lbl">${c.label}</div>
+                </div>`).join('');
+
+            const PAL_D = ['#3266ad','#e07b39','#28a745','#9c27b0','#ffc107','#dc3545','#17a2b8','#6c757d'];
+            const PAL_B = ['#3d5a80','#5ba49b','#fd7e14','#7c4dff','#00bcd4','#e91e63'];
+            const mkChart = (id,type,labels,data,opts={}) => {
+                const ctx = document.getElementById(id);
+                if (!ctx) return;
+                this.chartsStats[id] = new Chart(ctx, { type, data: { labels, datasets:[{ data, ...opts }] },
+                    options: { responsive:true, maintainAspectRatio:false,
+                        plugins:{ legend:{ position:'right', labels:{ font:{size:11}, boxWidth:12, padding:8 } } } } });
+            };
+
+            mkChart('chartAparato','doughnut', Object.keys(d.porAparato), Object.values(d.porAparato),
+                { backgroundColor:PAL_D, borderWidth:2, borderColor:'#fff' });
+            mkChart('chartEstado','pie', Object.keys(d.porEstado), Object.values(d.porEstado),
+                { backgroundColor: Object.keys(d.porEstado).map(k => ({'En curso':'#007bff','En espera':'#ffc107','Resuelto':'#28a745','Cancelado':'#6c757d','Pendiente':'#fd7e14'}[k]||'#999')),
+                  borderWidth:2, borderColor:'#fff' });
+
+            const pisoCtx = document.getElementById('chartPiso');
+            if (pisoCtx) {
+                this.chartsStats['chartPiso'] = new Chart(pisoCtx, { type:'bar',
+                    data:{ labels:Object.keys(d.porPiso), datasets:[{ label:'Incidentes', data:Object.values(d.porPiso), backgroundColor:'#5ba49b', borderRadius:6, borderSkipped:false }] },
+                    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+                        scales:{ y:{beginAtZero:true,ticks:{stepSize:1,font:{size:11}}}, x:{ticks:{font:{size:11},autoSkip:false,maxRotation:35}} } } });
+            }
+
+            const sorted = Object.entries(d.porCreador).sort((a,b)=>b[1]-a[1]).slice(0,6);
+            const crCtx  = document.getElementById('chartCreador');
+            if (crCtx) {
+                this.chartsStats['chartCreador'] = new Chart(crCtx, { type:'bar',
+                    data:{ labels:sorted.map(e=>e[0]), datasets:[{ label:'Tickets', data:sorted.map(e=>e[1]), backgroundColor:PAL_B, borderRadius:6, borderSkipped:false }] },
+                    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+                        scales:{ x:{beginAtZero:true,ticks:{stepSize:1,font:{size:11}}}, y:{ticks:{font:{size:11}}} } } });
+            }
+
+            const wrap = document.getElementById('wrapSemanas');
+            if (!d.semanasResueltas || !d.semanasResueltas.length) {
+                if (wrap) wrap.innerHTML='<p style="color:#888;text-align:center;margin-top:60px;font-size:13px">Sin datos aún.</p>';
+            } else {
+                const semCtx = document.getElementById('chartSemanas');
+                if (semCtx) {
+                    this.chartsStats['chartSemanas'] = new Chart(semCtx, { type:'line',
+                        data:{ labels:d.semanasResueltas.map(s=>s.semana), datasets:[{ label:'Resueltos', data:d.semanasResueltas.map(s=>s.total),
+                            fill:true, backgroundColor:'rgba(40,167,69,.12)', borderColor:'#28a745',
+                            pointBackgroundColor:'#28a745', pointRadius:5, tension:.35, borderWidth:2.5 }] },
+                        options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+                            scales:{ y:{beginAtZero:true,ticks:{stepSize:1,font:{size:11}}}, x:{ticks:{font:{size:11},autoSkip:false,maxRotation:35}} } } });
+                }
+            }
+        },
+
+        // ════════════════════════════════════
+        // PDF EXPORT
+        // ════════════════════════════════════
+        async exportarPDF() {
+            const ticket = this.detTicket;
+            if (!ticket) return;
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
+            const W=210, H=297, mx=15, cw=W-mx*2;
+            let y=20;
+
+            doc.setFillColor(44,62,80); doc.rect(0,0,W,28,'F');
+            doc.setTextColor(255,255,255); doc.setFontSize(14); doc.setFont('helvetica','bold');
+            doc.text('TICKETERA CLÍNICA ACONCAGUA', W/2,11,{align:'center'});
+            doc.setFontSize(10); doc.setFont('helvetica','normal');
+            doc.text('Bitácora de Seguimiento de Ticket', W/2,19,{align:'center'});
+            doc.setFontSize(8);
+            doc.text(`Generado el: ${new Date().toLocaleString('es-CL')}`, W/2,25,{align:'center'});
+
+            y=36; doc.setTextColor(0,0,0);
+            doc.setFillColor(240,244,248); doc.rect(mx,y-4,cw,42,'F');
+            doc.setDrawColor(200,210,220); doc.rect(mx,y-4,cw,42,'S');
+            doc.setFontSize(13); doc.setFont('helvetica','bold'); doc.setTextColor(44,62,80);
+            doc.text(`${ticket.id_ticket}  —  ${ticket.aparato}`, mx+4,y+3);
+
+            const estado = ticket.estado||'En curso';
+            const ec = {'En curso':[0,123,255],'En espera':[255,193,7],'Resuelto':[40,167,69],'Cancelado':[108,117,125],'Pendiente':[253,126,20]};
+            doc.setFillColor(...(ec[estado]||[100,100,100]));
+            doc.setTextColor(255,255,255); doc.setFontSize(9); doc.setFont('helvetica','bold');
+            doc.roundedRect(W-mx-30,y-2,28,8,3,3,'F');
+            doc.text(estado.toUpperCase(),W-mx-16,y+3,{align:'center'});
+
+            doc.setTextColor(80,80,80); doc.setFont('helvetica','normal'); doc.setFontSize(9); y+=12;
+            [['Creador',ticket.creador],['Fecha creación',ticket.fecha],
+             ['Ubicación',`${ticket.piso||'S/I'} — ${ticket.habitacion||'S/I'}`],
+             ['Técnico',ticket.tecnico_asignado||'Sin asignar']].forEach(([l,v])=>{
+                doc.setFont('helvetica','bold'); doc.text(`${l}:`,mx+4,y);
+                doc.setFont('helvetica','normal'); doc.text(v||'—',mx+42,y); y+=6; });
+
+            y+=4; doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.text('Descripción:',mx,y); y+=5;
+            doc.setFont('helvetica','normal');
+            const dl = doc.splitTextToSize(ticket.descripcion||'—',cw);
+            doc.text(dl,mx,y); y+=dl.length*5+6;
+
+            doc.setFillColor(44,62,80); doc.rect(mx,y,cw,8,'F');
+            doc.setTextColor(255,255,255); doc.setFont('helvetica','bold'); doc.setFontSize(10);
+            doc.text('Bitácora de Seguimiento',mx+4,y+5.5); y+=12;
+
+            const comentarios = this.detComentarios;
+            if (!comentarios.length) {
+                doc.setTextColor(150,150,150); doc.setFont('helvetica','italic'); doc.setFontSize(9);
+                doc.text('Sin actualizaciones registradas.',mx,y);
+            } else {
+                for (const c of comentarios) {
+                    const esBit = c.texto && c.texto.startsWith('📋 Cambio de estado:');
+                    const imgM  = c.texto && c.texto.match(/<img\s+src="([^"]+)"/i);
+                    const imgSrc= imgM ? imgM[1] : null;
+                    const clean = (c.texto||'').replace(/<img[^>]+>/gi,'').replace(/<a[^>]+>.*?<\/a>/gi,'').replace(/<[^>]+>/g,'').trim();
+                    const lines = clean ? doc.splitTextToSize(clean,cw-8) : [];
+                    let alto = lines.length ? (8+lines.length*4.5+4) : 14;
+                    let imgData=null, imgW=0, imgH=0;
+                    if (imgSrc) {
+                        try {
+                            imgData = await this.loadImgB64(imgSrc);
+                            const info = await this.imgDims(imgSrc);
+                            const ratio=info.w/info.h, maxH=70, maxW=cw-8;
+                            imgW=Math.min(maxW,ratio*maxH); imgH=imgW/ratio;
+                            if(imgH>maxH){imgH=maxH;imgW=imgH*ratio;}
+                            alto+=imgH+4;
+                        } catch(e){imgData=null;}
+                    }
+                    if (y+alto>H-20){doc.addPage();y=20;}
+                    doc.setFillColor(esBit?240:248,esBit?240:249,esBit?240:250);
+                    doc.setDrawColor(esBit?150:0,esBit?150:123,esBit?150:255);
+                    doc.setLineWidth(.4); doc.rect(mx,y,cw,alto,'FD');
+                    doc.setFillColor(esBit?108:0,esBit?117:123,esBit?125:255); doc.rect(mx,y,2.5,alto,'F');
+                    doc.setTextColor(100,100,100); doc.setFont('helvetica','bold'); doc.setFontSize(7.5);
+                    doc.text(`${c.usuario}   —   ${c.fecha}`,mx+6,y+5);
+                    let yi=y+10;
+                    if(lines.length){doc.setTextColor(50,50,50);doc.setFont('helvetica','normal');doc.setFontSize(8.5);doc.text(lines,mx+6,yi);yi+=lines.length*4.5+2;}
+                    if(imgData){try{doc.addImage(imgData,'JPEG',mx+6,yi,imgW,imgH);}catch(e){try{doc.addImage(imgData,'PNG',mx+6,yi,imgW,imgH);}catch(e2){}}yi+=imgH+2;}
+                    y+=alto+3;
+                }
+            }
+
+            const tp = doc.internal.getNumberOfPages();
+            for(let i=1;i<=tp;i++){
+                doc.setPage(i);doc.setFontSize(7);doc.setTextColor(150,150,150);doc.setFont('helvetica','normal');
+                doc.text('Clínica Aconcagua — Panel de Operaciones',mx,H-8);
+                doc.text(`Pág. ${i} / ${tp}`,W-mx,H-8,{align:'right'});
+            }
+            doc.save(`Bitacora_${ticket.id_ticket}.pdf`);
+        },
+
+        loadImgB64(src) {
+            return new Promise((res,rej)=>{
+                const img=new Image(); img.crossOrigin='anonymous';
+                img.onload=()=>{const c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;c.getContext('2d').drawImage(img,0,0);try{res(c.toDataURL('image/jpeg',.85));}catch(e){rej(e);}};
+                img.onerror=rej;
+                img.src=src.startsWith('http')?src:(location.origin+src+'?t='+Date.now());
+            });
+        },
+
+        imgDims(src) {
+            return new Promise((res,rej)=>{
+                const img=new Image();img.onload=()=>res({w:img.naturalWidth,h:img.naturalHeight});img.onerror=rej;
+                img.src=src.startsWith('http')?src:(location.origin+src);
+            });
+        },
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="seq" name="Página-1">
+    <mxGraphModel dx="2874" dy="2097" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1700" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d0_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°9 — Gestionando adjuntos y evidencia digital (caso de éxito)" vertex="1">
+          <mxGeometry height="30" width="935" x="75" y="-15" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="148" as="sourcePoint" />
+            <mxPoint x="60" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_DetalleTicket" vertex="1">
+          <mxGeometry height="40" width="120" x="387" y="64" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="447" y="104" as="sourcePoint" />
+            <mxPoint x="447" y="714" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="793" y="64" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="853" y="104" as="sourcePoint" />
+            <mxPoint x="853" y="714" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_mu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="multer (Multer)" vertex="1">
+          <mxGeometry height="40" width="132" x="1132" y="61" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_mu" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1198" y="101" as="sourcePoint" />
+            <mxPoint x="1198" y="711" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1344" y="61" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1428" y="101" as="sourcePoint" />
+            <mxPoint x="1428" y="711" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="528" width="10" x="55" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="528" width="10" x="442" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="436" width="10" x="848" y="192" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_mu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="68" width="10" x="1193" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="1423" y="327" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.229;entryY=0.018;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_v" value="1. Selecciona archivo, ingresa comentario y clic en &quot;Enviar&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="158" as="sourcePoint" />
+            <mxPoint x="210" y="158" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.017;entryY=0.015;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_s" value="2. POST /incidente/comentar (FormData: archivo, ticket_code, usuario, texto)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="452" y="198" as="sourcePoint" />
+            <mxPoint x="642" y="198" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.083;entryY=0.092;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_mu" value="3. upload.single(&#39;archivo&#39;) → procesa y almacena en /uploads">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="858" y="244" as="sourcePoint" />
+            <mxPoint x="1054" y="244" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m3" edge="1" parent="1" source="d0_bar_mu" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.028;exitY=0.779;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. Archivo guardado (file.filename, size, mimetype)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1054" y="290" as="sourcePoint" />
+            <mxPoint x="858" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m4" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="5. SELECT ticket_id FROM ticket WHERE ticket_code = ?">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="858" y="336" as="sourcePoint" />
+            <mxPoint x="1284" y="336" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m6" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.028;entryY=0.388;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="7. INSERT INTO attachment (file_name, file_path, mime_type, file_size_mb, ticket_id)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="858" y="428" as="sourcePoint" />
+            <mxPoint x="1284" y="428" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m7" edge="1" parent="1" source="d0_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.028;exitY=0.569;exitDx=0;exitDy=0;exitPerimeter=0;" value="8. Adjunto vinculado correctamente">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1284" y="474" as="sourcePoint" />
+            <mxPoint x="858" y="474" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m8" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0;entryY=0.758;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="9. INSERT INTO comment (content, user_id, ticket_id, creation_date)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="858" y="520" as="sourcePoint" />
+            <mxPoint x="1284" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m9" edge="1" parent="1" source="d0_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.056;exitY=0.936;exitDx=0;exitDy=0;exitPerimeter=0;" value="10. Comentario persistido">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1284" y="566" as="sourcePoint" />
+            <mxPoint x="858" y="566" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m10" edge="1" parent="1" source="d0_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.072;exitY=0.963;exitDx=0;exitDy=0;exitPerimeter=0;" value="11. 200 OK { success: true, comentarios, adjuntos }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="642" y="612" as="sourcePoint" />
+            <mxPoint x="452" y="612" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m11" edge="1" parent="1" source="d0_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.021;exitY=0.973;exitDx=0;exitDy=0;exitPerimeter=0;" value="12. Renderiza nuevo comentario y enlace/miniatura del archivo adjunto">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="664" as="sourcePoint" />
+            <mxPoint x="65" y="664" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="935" x="40" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°9 — Excepción 1: Ningún archivo seleccionado" vertex="1">
+          <mxGeometry height="30" width="935" x="37" y="794" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="881" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="972" as="sourcePoint" />
+            <mxPoint x="60" y="1324" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_DetalleTicket" vertex="1">
+          <mxGeometry height="40" width="120" x="410" y="893" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="933" as="sourcePoint" />
+            <mxPoint x="470" y="1323" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="827" y="895" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="887" y="935" as="sourcePoint" />
+            <mxPoint x="887" y="1325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_mu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="multer (Multer)" vertex="1">
+          <mxGeometry height="40" width="132" x="1121" y="895" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_mu" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1187" y="935" as="sourcePoint" />
+            <mxPoint x="1187" y="1325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1333" y="895" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1417" y="935" as="sourcePoint" />
+            <mxPoint x="1417" y="1325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="308" width="10" x="55" y="976" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="308" width="10" x="465" y="975" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="216" width="10" x="882" y="1023" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_bar_mu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="68" width="10" x="1182" y="1069" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.2;entryY=0.019;entryDx=0;entryDy=0;entryPerimeter=0;" target="d1_bar_v" value="1. Presiona &quot;Adjuntar / Enviar&quot; sin seleccionar archivo ni ingresar comentario">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="982" as="sourcePoint" />
+            <mxPoint x="210" y="982" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.01;entryY=0.031;entryDx=0;entryDy=0;entryPerimeter=0;" target="d1_bar_s" value="2. POST /incidente/comentar (FormData vacío)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="1027" as="sourcePoint" />
+            <mxPoint x="665" y="1027" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.029;entryY=0.088;entryDx=0;entryDy=0;entryPerimeter=0;" target="d1_bar_mu" value="3. upload.single(&#39;archivo&#39;) → procesa la petición">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="892" y="1075" as="sourcePoint" />
+            <mxPoint x="1088" y="1075" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m3" edge="1" parent="1" source="d1_bar_mu" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.02;exitY=0.771;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. req.file === undefined (ningún archivo recibido)">
+          <mxGeometry relative="1" x="0.0034" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="1088" y="1121" as="sourcePoint" />
+            <mxPoint x="892" y="1121" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m4" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="5. Evalúa (!req.file &amp;amp;&amp;amp; !req.body.texto) → payload vacío">
+          <mxGeometry relative="1" x="-0.7061" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="942" y="1167" />
+              <mxPoint x="942" y="1189" />
+            </Array>
+            <mxPoint x="892" y="1167" as="sourcePoint" />
+            <mxPoint x="892" y="1189" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m5" edge="1" parent="1" source="d1_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.036;exitY=0.926;exitDx=0;exitDy=0;exitPerimeter=0;" value="6. 400 Bad Request { error: &#39;Debe adjuntar un archivo o ingresar un comentario&#39; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="665" y="1221" as="sourcePoint" />
+            <mxPoint x="475" y="1221" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m6" edge="1" parent="1" source="d1_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.075;exitY=0.948;exitDx=0;exitDy=0;exitPerimeter=0;" value="7. Despliega alerta de error y mantiene modal abierto para reintentar">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="1268" as="sourcePoint" />
+            <mxPoint x="65" y="1268" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="935" x="40" y="1334" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°9 — Excepción 2: Archivo no válido (&gt; 10 MB o formato no permitido)" vertex="1">
+          <mxGeometry height="30" width="935" x="40" y="1413" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="1488" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="1576" as="sourcePoint" />
+            <mxPoint x="60" y="1872" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_DetalleTicket" vertex="1">
+          <mxGeometry height="40" width="120" x="432" y="1498" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="492" y="1538" as="sourcePoint" />
+            <mxPoint x="492" y="1872" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="882" y="1498" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="942" y="1538" as="sourcePoint" />
+            <mxPoint x="942" y="1872" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_mu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="multer (Multer)" vertex="1">
+          <mxGeometry height="40" width="132" x="1241" y="1498" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_mu" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1307" y="1538" as="sourcePoint" />
+            <mxPoint x="1307" y="1872" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1453" y="1498" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1537" y="1538" as="sourcePoint" />
+            <mxPoint x="1537" y="1872" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="55" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="487" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="160" width="10" x="937" y="1626" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_mu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="68" width="10" x="1302" y="1672" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.003;entryY=0.026;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_v" value="1. Selecciona un archivo que excede el límite (ej: &amp;gt;10 MB) y clic en &quot;Enviar&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="1586" as="sourcePoint" />
+            <mxPoint x="210" y="1586" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.017;entryY=0.036;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_s" value="2. POST /incidente/comentar (FormData: archivo pesado)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="497" y="1632" as="sourcePoint" />
+            <mxPoint x="687" y="1632" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.135;entryY=0.087;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_mu" value="3. upload.single(&#39;archivo&#39;) → evalúa límites de stream y tamaño">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="947" y="1678" as="sourcePoint" />
+            <mxPoint x="1143" y="1678" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m3" edge="1" parent="1" source="d2_bar_mu" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.135;exitY=0.77;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. MulterError: LIMIT_FILE_SIZE / formato no soportado">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1143" y="1724" as="sourcePoint" />
+            <mxPoint x="947" y="1724" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m4" edge="1" parent="1" source="d2_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.094;exitY=0.9;exitDx=0;exitDy=0;exitPerimeter=0;" value="5. 400 Bad Request { error: &#39;El archivo excede el tamaño máximo permitido (10 MB)&#39; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="687" y="1770" as="sourcePoint" />
+            <mxPoint x="497" y="1770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m5" edge="1" parent="1" source="d2_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.036;exitY=0.936;exitDx=0;exitDy=0;exitPerimeter=0;" value="6. Despliega alerta &quot;Archivo excede el límite permitido&quot; y mantiene modal abierto">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="1816" as="sourcePoint" />
+            <mxPoint x="65" y="1816" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="935" x="40" y="1882" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°9 — Excepción 3: Error al guardar en el servidor" vertex="1">
+          <mxGeometry height="30" width="935" x="34" y="1963" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="2026" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="2124" as="sourcePoint" />
+            <mxPoint x="60" y="2420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_DetalleTicket" vertex="1">
+          <mxGeometry height="40" width="120" x="485" y="2045" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="2085" as="sourcePoint" />
+            <mxPoint x="545" y="2419" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="858" y="2045" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="918" y="2085" as="sourcePoint" />
+            <mxPoint x="918" y="2419" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_mu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="multer (Multer)" vertex="1">
+          <mxGeometry height="40" width="132" x="1227" y="2045" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_mu" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1293" y="2085" as="sourcePoint" />
+            <mxPoint x="1293" y="2419" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1439" y="2045" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1523" y="2085" as="sourcePoint" />
+            <mxPoint x="1523" y="2419" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="55" y="2128" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="540" y="2127" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="160" width="10" x="913" y="2173" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_mu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="68" width="10" x="1288" y="2219" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.032;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;" target="d3_bar_v" value="1. Selecciona archivo para cargar y clic en &quot;Enviar&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="65" y="2134" as="sourcePoint" />
+            <mxPoint x="210" y="2134" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;" target="d3_bar_s" value="2. POST /incidente/comentar (FormData: archivo)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="2179" as="sourcePoint" />
+            <mxPoint x="740" y="2179" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.019;entryY=0.087;entryDx=0;entryDy=0;entryPerimeter=0;" target="d3_bar_mu" value="3. upload.single(&#39;archivo&#39;) → intenta escribir buffer en /uploads">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="923" y="2225" as="sourcePoint" />
+            <mxPoint x="1119" y="2225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m3" edge="1" parent="1" source="d3_bar_mu" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.029;exitY=0.77;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. Error de I/O en sistema de archivos (disco lleno / permisos EACCES)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1119" y="2271" as="sourcePoint" />
+            <mxPoint x="923" y="2271" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m4" edge="1" parent="1" source="d3_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.065;exitY=0.9;exitDx=0;exitDy=0;exitPerimeter=0;" value="5. 500 Internal Server Error { error: &#39;Error al subir el archivo al servidor&#39; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="740" y="2317" as="sourcePoint" />
+            <mxPoint x="550" y="2317" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m5" edge="1" parent="1" source="d3_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0;exitY=0.938;exitDx=0;exitDy=0;exitPerimeter=0;" value="6. Despliega alerta &quot;Error al subir el archivo, intente nuevamente&quot; y mantiene formulario abierto">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="2364" as="sourcePoint" />
+            <mxPoint x="65" y="2364" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="935" x="40" y="2430" as="geometry" />
+        </mxCell>
+        <mxCell id="8cIr7OB553ygU3SgvOdn-2" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.028;exitY=0.569;exitDx=0;exitDy=0;exitPerimeter=0;" value="6. Retorna ticket_id">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1423" y="377" as="sourcePoint" />
+            <mxPoint x="858" y="381" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
