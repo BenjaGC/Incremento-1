@@ -1,0 +1,377 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="seq" name="Página-1">
+    <mxGraphModel dx="1783" dy="1068" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1700" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d0_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°44 — Gestionando las notificaciones del panel (caso de éxito)" vertex="1">
+          <mxGeometry height="30" width="742" x="29" y="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="148" as="sourcePoint" />
+            <mxPoint x="60" y="512.74" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_Notificaciones" vertex="1">
+          <mxGeometry height="40" width="139" x="429" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="498" y="108" as="sourcePoint" />
+            <mxPoint x="498" y="504.37" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="782" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="842" y="108" as="sourcePoint" />
+            <mxPoint x="842" y="496.19" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1387" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1471" y="108" as="sourcePoint" />
+            <mxPoint x="1471" y="485.28" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="346" width="10" x="55" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="340" width="10" x="494" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="837" y="196" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="160" width="10" x="1466" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.049;entryY=0.019;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_v" value="1. Hace clic en el centro de notificaciones para abrir el panel de avisos">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="158" as="sourcePoint" />
+            <mxPoint x="220" y="158" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.088;entryY=0.024;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_s" value="2. GET /api/notificaciones/usuario { user_id }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="504" y="202" as="sourcePoint" />
+            <mxPoint x="703" y="202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.039;entryY=0.043;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="3. SELECT ticket_id, ticket_code, title, notify_creator, updated_at FROM ticket WHERE user_id = ? AND notify_creator = 1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="847" y="248" as="sourcePoint" />
+            <mxPoint x="1061" y="248" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m3" edge="1" parent="1" source="d0_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.009;exitY=0.329;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. Retorna registros de notificaciones pendientes">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1061" y="294" as="sourcePoint" />
+            <mxPoint x="847" y="294" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m4" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.113;entryY=0.621;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="5. UPDATE ticket SET notify_creator = 0 WHERE user_id = ? AND notify_creator = 1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="847" y="340" as="sourcePoint" />
+            <mxPoint x="1061" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m5" edge="1" parent="1" source="d0_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.203;exitY=0.903;exitDx=0;exitDy=0;exitPerimeter=0;" value="6. Confirmación de actualización (affectedRows &amp;gt;= 1)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1061" y="386" as="sourcePoint" />
+            <mxPoint x="847" y="386" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m6" edge="1" parent="1" source="d0_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.028;exitY=0.937;exitDx=0;exitDy=0;exitPerimeter=0;" value="7. 200 OK { success: true, notificaciones: [...], unreadCount: 0 }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="703" y="432" as="sourcePoint" />
+            <mxPoint x="504" y="432" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m7" edge="1" parent="1" source="d0_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.072;exitY=0.965;exitDx=0;exitDy=0;exitPerimeter=0;" value="8. Despliega panel con listado de avisos y actualiza el contador de notificaciones a 0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="480" as="sourcePoint" />
+            <mxPoint x="65" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="742" x="40" y="638" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°44 — Excepción 1: El componente no responde" vertex="1">
+          <mxGeometry height="30" width="742" x="45" y="713" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="794" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="880" as="sourcePoint" />
+            <mxPoint x="60" y="1048" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_Notificaciones" vertex="1">
+          <mxGeometry height="40" width="139" x="314" y="802" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="383" y="842" as="sourcePoint" />
+            <mxPoint x="383" y="1048" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="737" y="802" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="797" y="842" as="sourcePoint" />
+            <mxPoint x="797" y="1048" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="870" y="802" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="954" y="842" as="sourcePoint" />
+            <mxPoint x="954" y="1048" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="124" width="10" x="55" y="884" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="124" width="10" x="379" y="884" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.075;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;" target="d1_bar_v" value="1. Clic en el icono de notificaciones">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="890" as="sourcePoint" />
+            <mxPoint x="220" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="2. Excepción JavaScript en el DOM / Fallo en el controlador reactivo de Alpine.js">
+          <mxGeometry relative="1" x="-0.903" y="7" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="439" y="921" />
+              <mxPoint x="439" y="943" />
+            </Array>
+            <mxPoint x="389" y="921" as="sourcePoint" />
+            <mxPoint x="389" y="943" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m2" edge="1" parent="1" source="d1_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.226;exitY=0.618;exitDx=0;exitDy=0;exitPerimeter=0;" value="3. El panel no responde y requiere refrescar la página (F5)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="962" as="sourcePoint" />
+            <mxPoint x="65" y="962" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="742" x="40" y="1058" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°44 — Excepción 2: Fallo de conexión a la base de datos" vertex="1">
+          <mxGeometry height="30" width="742" x="40" y="1155" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="1215" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="1300" as="sourcePoint" />
+            <mxPoint x="60" y="1596" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_Notificaciones" vertex="1">
+          <mxGeometry height="40" width="139" x="429" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="498" y="1262" as="sourcePoint" />
+            <mxPoint x="498" y="1596" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="882" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="942" y="1262" as="sourcePoint" />
+            <mxPoint x="942" y="1596" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1225" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1309" y="1262" as="sourcePoint" />
+            <mxPoint x="1309" y="1596" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="55" y="1304" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="494" y="1304" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="160" width="10" x="937" y="1350" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="60" width="10" x="1304" y="1375" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.048;entryY=0.024;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_v" value="1. Hace clic en el centro de notificaciones para abrir el panel de avisos">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="1310" as="sourcePoint" />
+            <mxPoint x="220" y="1310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.015;entryY=0.037;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_s" value="2. GET /api/notificaciones/usuario { user_id }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="504" y="1356" as="sourcePoint" />
+            <mxPoint x="703" y="1356" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.308;entryY=0.129;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_db" value="3. SELECT ticket_id, ticket_code, title, notify_creator,&amp;nbsp;&lt;div&gt;updated_at FROM ticket WHERE user_id = ? AND notify_creator = 1&lt;/div&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="947" y="1382" as="sourcePoint" />
+            <mxPoint x="1161" y="1382" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m3" edge="1" parent="1" source="d2_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.06;exitY=0.832;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. Error: Query timeout / Connection lost (MySQL no responde)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1161" y="1425" as="sourcePoint" />
+            <mxPoint x="947" y="1425" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m4" edge="1" parent="1" source="d2_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.099;exitY=0.868;exitDx=0;exitDy=0;exitPerimeter=0;" value="6. 500 Internal Server Error { success: false, error: &quot;Error al obtener notificaciones&quot; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="703" y="1489" as="sourcePoint" />
+            <mxPoint x="504" y="1489" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m5" edge="1" parent="1" source="d2_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.041;exitY=0.937;exitDx=0;exitDy=0;exitPerimeter=0;" value="7. Despliega notificación: &quot;No fue posible cargar las notificaciones. Intente más tarde&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="1540" as="sourcePoint" />
+            <mxPoint x="65" y="1540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="742" x="40" y="1606" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°44 — Excepción 3: El ticket no existe" vertex="1">
+          <mxGeometry height="30" width="742" x="40" y="1707" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Usuario" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="1765" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="1848" as="sourcePoint" />
+            <mxPoint x="60" y="2144" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_Notificaciones" vertex="1">
+          <mxGeometry height="40" width="139" x="451" y="1770" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="1810" as="sourcePoint" />
+            <mxPoint x="520" y="2144" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="861" y="1770" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="921" y="1810" as="sourcePoint" />
+            <mxPoint x="921" y="2144" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1231" y="1770" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1315" y="1810" as="sourcePoint" />
+            <mxPoint x="1315" y="2144" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="55" y="1852" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="516" y="1852" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="160" width="10" x="916" y="1898" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="68" width="10" x="1310" y="1944" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.109;entryY=0.083;entryDx=0;entryDy=0;entryPerimeter=0;" target="d3_bar_v" value="1. Intenta marcar como leída una notificación específica">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="1873" as="sourcePoint" />
+            <mxPoint x="220" y="1873" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.29;entryY=0.046;entryDx=0;entryDy=0;entryPerimeter=0;" target="d3_bar_s" value="2. PUT /api/notificaciones/marcar-leida { ticket_id, user_id }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="526" y="1904" as="sourcePoint" />
+            <mxPoint x="725" y="1904" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.076;entryY=0.096;entryDx=0;entryDy=0;entryPerimeter=0;" target="d3_bar_db" value="3. SELECT ticket_id FROM ticket WHERE ticket_id = ? AND user_id = ?">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="926" y="1950" as="sourcePoint" />
+            <mxPoint x="1140" y="1950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m3" edge="1" parent="1" source="d3_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" value="4. Retorna conjunto vacío: [] (ticket no encontrado)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1140" y="1996" as="sourcePoint" />
+            <mxPoint x="926" y="1996" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m4" edge="1" parent="1" source="d3_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.119;exitY=0.901;exitDx=0;exitDy=0;exitPerimeter=0;" value="5. 404 Not Found { success: false, error: &quot;La notificación o ticket no existe&quot; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="725" y="2042" as="sourcePoint" />
+            <mxPoint x="526" y="2042" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m5" edge="1" parent="1" source="d3_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.079;exitY=0.937;exitDx=0;exitDy=0;exitPerimeter=0;" value="6. Despliega aviso: &quot;La notificación ya no está disponible&quot; y mantiene la lista sin cambios">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="2088" as="sourcePoint" />
+            <mxPoint x="65" y="2088" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="742" x="40" y="2154" as="geometry" />
+        </mxCell>
+        <mxCell id="n6fXIF5-4_DYFvoTQADp-2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="5. Captura excepción (.catch) y registra error en log del sistema">
+          <mxGeometry relative="1" x="-0.903" y="7" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="997" y="1454" />
+              <mxPoint x="997" y="1476" />
+            </Array>
+            <mxPoint x="947" y="1454" as="sourcePoint" />
+            <mxPoint x="947" y="1476" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n6fXIF5-4_DYFvoTQADp-3" edge="1" parent="1" source="d3_title" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="d3_title">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

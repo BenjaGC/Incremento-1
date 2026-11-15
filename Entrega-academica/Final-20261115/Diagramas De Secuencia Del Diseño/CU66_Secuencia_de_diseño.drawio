@@ -1,0 +1,413 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="seq" name="Página-1">
+    <mxGraphModel dx="2947" dy="1526" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1700" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d0_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°66 — Verificando la identidad chilena mediante el motor (caso de éxito)" vertex="1">
+          <mxGeometry height="30" width="749" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Administrador" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="148" as="sourcePoint" />
+            <mxPoint x="60" y="599.25" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_GestionUsuarios" vertex="1">
+          <mxGeometry height="40" width="146" x="536" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="609" y="110" as="sourcePoint" />
+            <mxPoint x="609" y="593.19" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="995" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1055" y="110" as="sourcePoint" />
+            <mxPoint x="1055" y="567.43" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1553" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1636.58" y="115" as="sourcePoint" />
+            <mxPoint x="1636.58" y="540.92" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="434" width="10" x="55" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="431" width="10" x="604" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="357" width="10" x="1050" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="252" width="10" x="1632" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="d0_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.173;entryY=0.054;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_v" value="1. Completa formulario de registro (nombre, RUT, correo institucional, rol, contraseña) y pulsa &quot;Crear Usuario&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="175" as="sourcePoint" />
+            <mxPoint x="223" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.025;entryY=0.027;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_s" value="2. POST /api/usuarios/crear { name, rut, institutional_email, role_id, password }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="614" y="208" as="sourcePoint" />
+            <mxPoint x="817" y="208" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="3. validarRutModulo11(rut) → formato y dígito verificador válidos (true)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="250" />
+              <mxPoint x="1110" y="272" />
+            </Array>
+            <mxPoint x="1060" y="250" as="sourcePoint" />
+            <mxPoint x="1060" y="272" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m4" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.079;entryY=0.08;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="4. SELECT user_id FROM user WHERE rut = ? OR institutional_email = ?">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1062" y="298" as="sourcePoint" />
+            <mxPoint x="1276" y="298" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m5" edge="1" parent="1" source="d0_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.109;exitY=0.178;exitDx=0;exitDy=0;exitPerimeter=0;" value="5. Retorna conjunto vacío: [] (RUT y correo no registrados previamente)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1274" y="323" as="sourcePoint" />
+            <mxPoint x="1060" y="323" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m6" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.049;entryY=0.549;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="7. INSERT INTO user (first_name, rut, institutional_email, password_hash, status) VALUES (?, ?, ?, ?, &#39;ACTIVO&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1060" y="416" as="sourcePoint" />
+            <mxPoint x="1274" y="416" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m7" edge="1" parent="1" source="d0_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.049;exitY=0.707;exitDx=0;exitDy=0;exitPerimeter=0;" value="8. Retorna confirmación de inserción (insertId: 45)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1274" y="456" as="sourcePoint" />
+            <mxPoint x="1060" y="456" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m8" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.049;entryY=0.836;entryDx=0;entryDy=0;entryPerimeter=0;" target="d0_bar_db" value="9. INSERT INTO user_role (user_id, role_id, active, assignment_date) VALUES (?, ?, 1, NOW())">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1060" y="489" as="sourcePoint" />
+            <mxPoint x="1274" y="489" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m9" edge="1" parent="1" source="d0_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.019;exitY=0.963;exitDx=0;exitDy=0;exitPerimeter=0;" value="10. Confirmación de vinculación de rol (affectedRows: 1)">
+          <mxGeometry relative="1" x="-0.0031" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="1274" y="520" as="sourcePoint" />
+            <mxPoint x="1060" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m10" edge="1" parent="1" source="d0_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.055;exitY=0.972;exitDx=0;exitDy=0;exitPerimeter=0;" value="11. 201 Created { success: true, message: &quot;Usuario creado exitosamente&quot;, user_id: 45 }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="817" y="545" as="sourcePoint" />
+            <mxPoint x="614" y="545" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_m11" edge="1" parent="1" source="d0_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.009;exitY=0.968;exitDx=0;exitDy=0;exitPerimeter=0;" value="12. Despliega notificación de éxito, limpia el formulario y actualiza la tabla de usuarios">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="223" y="569" as="sourcePoint" />
+            <mxPoint x="65" y="569" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d0_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="749" x="40" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°66 — Excepción 1: Campo RUT vacío (validación en la vista)" vertex="1">
+          <mxGeometry height="30" width="749" x="102" y="843" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Administrador" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="914" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="992" as="sourcePoint" />
+            <mxPoint x="60" y="1262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_GestionUsuarios" vertex="1">
+          <mxGeometry height="40" width="146" x="386" y="914" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="459" y="954" as="sourcePoint" />
+            <mxPoint x="459" y="1262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="815" y="914" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="875" y="954" as="sourcePoint" />
+            <mxPoint x="875" y="1262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="948" y="914" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1032" y="954" as="sourcePoint" />
+            <mxPoint x="1032" y="1262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="226" width="10" x="55" y="996" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="226" width="10" x="454" y="996" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.026;entryY=0.027;entryDx=0;entryDy=0;entryPerimeter=0;" target="d1_bar_v" value="1. Envía el formulario de registro omitiendo el campo obligatorio RUT">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="1002" as="sourcePoint" />
+            <mxPoint x="223" y="1002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="2. Valida campos obligatorios en el cliente (Alpine.js) → rut.trim() === &quot;&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="514" y="1048" />
+              <mxPoint x="514" y="1070" />
+            </Array>
+            <mxPoint x="464" y="1048" as="sourcePoint" />
+            <mxPoint x="464" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="3. Bloquea el envío (preventDefault) y resalta el campo RUT en rojo">
+          <mxGeometry relative="1" x="-0.0051" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="514" y="1104" />
+              <mxPoint x="514" y="1126" />
+            </Array>
+            <mxPoint x="464" y="1104" as="sourcePoint" />
+            <mxPoint x="464" y="1126" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_m3" edge="1" parent="1" source="d1_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.013;exitY=0.727;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. Despliega alerta: &quot;El campo RUT es obligatorio para completar el registro&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="223" y="1160" as="sourcePoint" />
+            <mxPoint x="65" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d1_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="749" x="40" y="1272" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°66 — Excepción 2 y 3: Formato de RUT inválido o dígito verificador incorrecto" vertex="1">
+          <mxGeometry height="30" width="749" x="36" y="1345" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Administrador" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="1436" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="1514" as="sourcePoint" />
+            <mxPoint x="60" y="1715.16" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_GestionUsuarios" vertex="1">
+          <mxGeometry height="40" width="146" x="532" y="1434.17" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="605" y="1474.17" as="sourcePoint" />
+            <mxPoint x="605" y="1705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="1108" y="1431" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1168" y="1471.17" as="sourcePoint" />
+            <mxPoint x="1168" y="1674.72" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1626" y="1443.17" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1709.58" y="1483.17" as="sourcePoint" />
+            <mxPoint x="1709.58" y="1671.5700000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="187" width="10" x="55" y="1518" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="180" width="10" x="600" y="1516.17" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="105" width="10" x="1163" y="1559.17" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.082;entryY=0.117;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_v" value="1. Ingresa datos con RUT malformado o dígito verificador erróneo y pulsa &quot;Crear Usuario&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="1539" as="sourcePoint" />
+            <mxPoint x="223" y="1539" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=-0.066;entryY=0.063;entryDx=0;entryDy=0;entryPerimeter=0;" target="d2_bar_s" value="2. POST /api/usuarios/crear { name, rut, institutional_email, role_id, password }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="1568.17" as="sourcePoint" />
+            <mxPoint x="813" y="1568.17" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="3. validarRutModulo11(rut) → /^\d{7,8}-[\dkK]$/.test(rut) &amp;amp;&amp;amp; dvCalculado !== dvIngresado (false)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1223" y="1611.17" />
+              <mxPoint x="1223" y="1633.17" />
+            </Array>
+            <mxPoint x="1173" y="1611.17" as="sourcePoint" />
+            <mxPoint x="1173" y="1633.17" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m4" edge="1" parent="1" source="d2_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.116;exitY=0.926;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. 400 Bad Request { success: false, error: &quot;El RUT ingresado no es válido (dígito verificador incorrecto)&quot; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="813" y="1659.17" as="sourcePoint" />
+            <mxPoint x="610" y="1659.17" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_m5" edge="1" parent="1" source="d2_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.052;exitY=0.957;exitDx=0;exitDy=0;exitPerimeter=0;" value="5. Despliega alerta: &quot;RUT inválido. Verifique el formato y dígito verificador&quot; y mantiene los datos del formulario">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="217.16" y="1691" as="sourcePoint" />
+            <mxPoint x="68" y="1691" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="749" x="40" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=2;fontColor=#000000;fontFamily=Helvetica;" value="Caso de Uso N°66 — Excepción 4: RUT ya registrado en el sistema" vertex="1">
+          <mxGeometry height="30" width="749" x="-20" y="1928" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_a" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Administrador" vertex="1">
+          <mxGeometry height="60" width="30" x="45" y="2004" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_a" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="2082" as="sourcePoint" />
+            <mxPoint x="60" y="2367.43" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="V_GestionUsuarios" vertex="1">
+          <mxGeometry height="40" width="146" x="442" y="2004" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_v" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="515" y="2044" as="sourcePoint" />
+            <mxPoint x="515" y="2362.89" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="C_Servidor" vertex="1">
+          <mxGeometry height="40" width="120" x="880" y="2004" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_s" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="2044" as="sourcePoint" />
+            <mxPoint x="940" y="2337.13" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="DB_MySQL" vertex="1">
+          <mxGeometry height="40" width="168" x="1286" y="2004" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_ll_db" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=6 6;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1370" y="2044" as="sourcePoint" />
+            <mxPoint x="1370" y="2314.4" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_bar_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="275" width="10" x="55" y="2086" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="269" width="10" x="510" y="2086" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_s" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="198" width="10" x="935" y="2132" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_bar_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="68" width="10" x="1365" y="2234" as="geometry" />
+        </mxCell>
+        <mxCell id="d3_m0" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.114;entryY=0.021;entryDx=0;entryDy=0;entryPerimeter=0;" value="1. Completa formulario con un RUT ya existente en el sistema y pulsa &quot;Crear Usuario&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="63.86" y="2108.35" as="sourcePoint" />
+            <mxPoint x="509.9999999999999" y="2107.999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.128;entryY=0.031;entryDx=0;entryDy=0;entryPerimeter=0;" target="d3_bar_s" value="2. POST /api/usuarios/crear { name, rut, institutional_email, role_id, password }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="2138" as="sourcePoint" />
+            <mxPoint x="723" y="2138" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m2" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="3. validarRutModulo11(rut) → formato y dígito verificador válidos (true)">
+          <mxGeometry relative="1" x="-0.0027" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="995" y="2184" />
+              <mxPoint x="995" y="2206" />
+            </Array>
+            <mxPoint x="945" y="2184" as="sourcePoint" />
+            <mxPoint x="945" y="2206" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m3" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;entryX=0.177;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" target="d3_bar_db" value="4. SELECT user_id FROM user WHERE rut = ?">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="945" y="2240" as="sourcePoint" />
+            <mxPoint x="1159" y="2240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m4" edge="1" parent="1" source="d3_bar_db" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.025;exitY=0.78;exitDx=0;exitDy=0;exitPerimeter=0;" value="5. Retorna registro coincidente: [ { user_id: 12 } ] (RUT ya existe)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1159" y="2286" as="sourcePoint" />
+            <mxPoint x="945" y="2286" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m6" edge="1" parent="1" source="d3_bar_s" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=0.052;exitY=0.965;exitDx=0;exitDy=0;exitPerimeter=0;" value="6. 409 Conflict { success: false, error: &quot;El RUT ingresado ya se encuentra registrado&quot; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="723" y="2322" as="sourcePoint" />
+            <mxPoint x="520" y="2322" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_m7" edge="1" parent="1" source="d3_bar_v" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;exitX=-0.012;exitY=0.975;exitDx=0;exitDy=0;exitPerimeter=0;" value="7. Despliega alerta: &quot;El RUT ya está registrado en el sistema&quot; y resalta el campo en rojo">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="223" y="2348" as="sourcePoint" />
+            <mxPoint x="65" y="2348" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d3_src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#000000;" value="Fuente: Elaborado por el estudiante de acuerdo con el proyecto." vertex="1">
+          <mxGeometry height="24" width="749" x="40" y="2500" as="geometry" />
+        </mxCell>
+        <mxCell id="8VBejRxFGvFxj5lADiqQ-1" edge="1" parent="1" style="html=1;endArrow=block;endFill=1;strokeColor=#000000;fontColor=#000000;fontSize=11;verticalAlign=bottom;align=left;" value="6. bcrypt.hash(password, 10) → password_hash generado">
+          <mxGeometry relative="1" x="-0.9184" y="4" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1110" y="365" />
+              <mxPoint x="1110" y="387" />
+            </Array>
+            <mxPoint x="1060" y="365" as="sourcePoint" />
+            <mxPoint x="1060" y="387" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

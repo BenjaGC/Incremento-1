@@ -1,0 +1,519 @@
+{
+  "fecha": "2026-11-15",
+  "archivos": [
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-14 – Comentario público en ticket.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-14 – Comentario público en ticket.png",
+      "sha256": "a7efac063954155704cfece34a11467f67dc4b9b4e071a54b5adc73d5d20ce41",
+      "bytes": 5844
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-05 – Validación de RUT módulo 11 válido.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-05 – Validación de RUT módulo 11 válido.png",
+      "sha256": "ffe13c08a3d2c27457ffa3db1a3b876ad471618dc917fa2c6b9cf96479ab8424",
+      "bytes": 15542
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-17 – Dashboard muestra KPIs correctos.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-17 – Dashboard muestra KPIs correctos.png",
+      "sha256": "01d5f32285af54cff7a0bd13aad197acf495c922e418864853027833f9d0549e",
+      "bytes": 58620
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-20 – Exportar ticket a PDF.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-20 – Exportar ticket a PDF.png",
+      "sha256": "5386614d1afb638728423bc8c3440ba3073128136c5dae21f154c86242ff320b",
+      "bytes": 121786
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-18 – Base de conocimiento crear artículo.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-18 – Base de conocimiento crear artículo.png",
+      "sha256": "92972cc13096b0d1a7ec8d7fa0c5a2171f3d15f7eba651ac8a950c122499eb5d",
+      "bytes": 33064
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-21 – Recuperación de contraseña por olvido.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-21 – Recuperación de contraseña por olvido.png",
+      "sha256": "3065e2de14cc84d3bc2fd0bca1fbc7d06617595cb4ddd13684bf2f490e41dc31",
+      "bytes": 18966
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-10 – Adjuntar archivo de 15 MB.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-10 – Adjuntar archivo de 15 MB.png",
+      "sha256": "7f9b450817107d8104e515878d83cade59c86d22b0feeb29e8ed278a23588a1e",
+      "bytes": 15374
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-01 – Registrar usuario con RUT válido.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-01 – Registrar usuario con RUT válido.png",
+      "sha256": "510eb03ab6278b20a3275569c3242dc40572312b2fcc701d4d138449f1eadd8f",
+      "bytes": 16253
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-06 – Validación de RUT módulo 11 inválido.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-06 – Validación de RUT módulo 11 inválido.png",
+      "sha256": "9ff042db1239d360697e9a1fc81acd3a4ce60e64db6dcc0084b437f2507441f5",
+      "bytes": 16814
+    },
+    {
+      "origen": "Incremento 1/Diagramas de Componente y Despliegue/Diagrama de Componentes.drawio",
+      "archivo": "Diagramas de Componente y Despliegue/Diagrama de Componentes.drawio",
+      "sha256": "0a70fad5fd315b7f8f57356fcc6cb8079b2494ece2a293758b77cd0ac7c02036",
+      "bytes": 10670
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-15 – Notificación por correo al crear ticket.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-15 – Notificación por correo al crear ticket.png",
+      "sha256": "8e6e60a3cc3419d37a0200dfef1177e38e3b1f16dc1b80ac2ee8109c04ece90b",
+      "bytes": 164197
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-16 – Notificación por correo al resolver ticket.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-16 – Notificación por correo al resolver ticket.png",
+      "sha256": "0004f163025ba956056556cf28ef3720d38a1bf592decd98439484a8fbf22220",
+      "bytes": 160411
+    },
+    {
+      "origen": "Incremento 1/ClasesUML.drawio",
+      "archivo": "ClasesUML.drawio",
+      "sha256": "0ef9368284dbb03fe082c6de4dd605464d9be7f264ed0cf771948434106514fd",
+      "bytes": 38744
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-19 – Auto-asistencia sugerencia de artículo.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-19 – Auto-asistencia sugerencia de artículo.png",
+      "sha256": "6a7c206fae4ae4cf848cb339cfd5b4c17b1009706dd7d29cfd59f3384f0021c9",
+      "bytes": 79894
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.15 Diagrama de CU - Auto-asistiendo durante la creación de tickets.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.15 Diagrama de CU - Auto-asistiendo durante la creación de tickets.drawio",
+      "sha256": "e02f0ddb54b312df0d8beb6d45e2a7aaf6bc0d003d434624bcbafd34375b1b6c",
+      "bytes": 8172
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-23 – Autenticación 2FA (código incorrecto).png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-23 – Autenticación 2FA (código incorrecto).png",
+      "sha256": "0f7bc31780a83b87079f028418e748b811c8810d8abdbd4e1d8d9136bd01064c",
+      "bytes": 30218
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-09 – Adjuntar archivo JPG de 5 MB.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-09 – Adjuntar archivo JPG de 5 MB.png",
+      "sha256": "c032e2c8f30b9e7e78eca6c36f7f51b0655dee15302c3f8ab1c6868790b3dabd",
+      "bytes": 28427
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.12 Diagrama de CU - Evaluando la eficacia técnica.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.12 Diagrama de CU - Evaluando la eficacia técnica.drawio",
+      "sha256": "a1f550093780b1d970b112a1b145203aa558b7ff4acf9c68d104829221790e8c",
+      "bytes": 8149
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.20 Diagrama de CU - Gestionando el centro de notificaciones in-app.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.20 Diagrama de CU - Gestionando el centro de notificaciones in-app.drawio",
+      "sha256": "007ab8223e5fe5ffb02bac503d7edba17cfd267a2a8f686b4aacfde9f0afc8b6",
+      "bytes": 10135
+    },
+    {
+      "origen": "Incremento 1/Diagramas de Componente y Despliegue/Diagrama de Despliegue.drawio",
+      "archivo": "Diagramas de Componente y Despliegue/Diagrama de Despliegue.drawio",
+      "sha256": "a5501ba9419224ee39340ac4d50d53d46bff1ef069b2aaf11c3886f11efe9f6c",
+      "bytes": 13618
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.10 Diagrama de CU - Vigilando activamente los tiempos (SLA).drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.10 Diagrama de CU - Vigilando activamente los tiempos (SLA).drawio",
+      "sha256": "6def5db7aee6d0effb89d190bfee8a56537ccc16128c1b51ad00f5088d0aa8e0",
+      "bytes": 8738
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.4 Diagrama de CU - Creando tickets mediante el formulario central.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.4 Diagrama de CU - Creando tickets mediante el formulario central.drawio",
+      "sha256": "f6793ff016ddb8fe9d2a0968c230abfc8c22d1e732a4ee7cd8d1c55c2229d592",
+      "bytes": 6415
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.14 Diagrama de CU - Documentando soluciones recurrentes.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.14 Diagrama de CU - Documentando soluciones recurrentes.drawio",
+      "sha256": "4df267dcd0556196cea0b150fe03ab4f3ada9c5786557bf25fe8b9490012635e",
+      "bytes": 10945
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.8 Diagrama de CU - Comunicando asíncronamente en los tickets.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.8 Diagrama de CU - Comunicando asíncronamente en los tickets.drawio",
+      "sha256": "1537a87a304995901e0b29d0747fdd134621c17ce86734eeb5fb3c0141a82708",
+      "bytes": 9348
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.7 Diagrama de CU - Visualizando estructuradamente las solicitudes.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.7 Diagrama de CU - Visualizando estructuradamente las solicitudes.drawio",
+      "sha256": "952e71746abde1a962e21a5b405459bd82468486241cea74c673fba3dd76f426",
+      "bytes": 9180
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-04 – Inicio de sesión con contraseña incorrecta.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-04 – Inicio de sesión con contraseña incorrecta.png",
+      "sha256": "5543d085d27b693c38e8ef40d7aa3221017933b551750df5f8219507b583fca5",
+      "bytes": 13492
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU44_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU44_Secuencia_de_diseño.drawio",
+      "sha256": "ac51b4c32d2e7140d3e0e3b24b6794b4ece59888febf6bd80bbb1e249ccf210c",
+      "bytes": 30336
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.21 Diagrama de CU -  Reforzando la seguridad en el inicio de sesión (2FA).drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.21 Diagrama de CU -  Reforzando la seguridad en el inicio de sesión (2FA).drawio",
+      "sha256": "b625e01c55f55e1bf6705a41fb9cd677075358b5c6bda2a0168dba49414d079e",
+      "bytes": 9898
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU19_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU19_Secuencia_de_diseño.drawio",
+      "sha256": "2adf0f59942f68cd16b693659a51b8630d051c4238d7408b4c267faa87584e4b",
+      "bytes": 33194
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-02 – Registrar usuario con RUT duplicado.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-02 – Registrar usuario con RUT duplicado.png",
+      "sha256": "c1983d18e3f4084bd02c5bd5d09c03bf1e0cf28560971856f2612e0d8e891b44",
+      "bytes": 16107
+    },
+    {
+      "origen": "Incremento 1/Base_de_datos_INGSOFTWARE/Modelo Fisico (draw.io)/modelo fisico mere.jpg",
+      "archivo": "Base_de_datos_INGSOFTWARE/Modelo Fisico (draw.io)/modelo fisico mere.jpg",
+      "sha256": "cfc55e3a9024353b5980489610da5fb267b1330b61ea9d7e5b9f0f08808c8215",
+      "bytes": 316705
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU01_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU01_Secuencia_de_diseño.drawio",
+      "sha256": "4b958267ca439ef1c3aba804d6c98919cda5c050178a75b8fe62e2e1421a7a33",
+      "bytes": 41250
+    },
+    {
+      "origen": "Incremento 1/Árbol de Navegación del Sistema (MVP).drawio",
+      "archivo": "Árbol de Navegación del Sistema (MVP).drawio",
+      "sha256": "b1b0d086d73e5dd974c25ec0c4abc1710198756da497292f2edefc1df05c6681",
+      "bytes": 29984
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-11 – Asignación automática de ticket por categoría.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-11 – Asignación automática de ticket por categoría.png",
+      "sha256": "cf757881ed098885b2d645ea0fb9e5772e964090f29205057a4eab3a134e6996",
+      "bytes": 31832
+    },
+    {
+      "origen": "Incremento 1/Base_de_datos_INGSOFTWARE/MERE(draw.io)/mere Corregido.drawio.png",
+      "archivo": "Base_de_datos_INGSOFTWARE/MERE(draw.io)/mere Corregido.drawio.png",
+      "sha256": "2ccac029f0b3d30a488997fe1e9175a81de2d6af8e829891fa0e1d7ad852f129",
+      "bytes": 922552
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.5 Diagrama de CU - Gestionando archivos adjuntos y evidencia digital.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.5 Diagrama de CU - Gestionando archivos adjuntos y evidencia digital.drawio",
+      "sha256": "d9349a0e91c999aece9fc598e84b7a006257ecac4b73910e6d3749e973673c55",
+      "bytes": 9042
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU39_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU39_Secuencia_de_diseño.drawio",
+      "sha256": "073628e18945fc8196c6d3f88db9a7fed499c857262e0337ca23356c80bb40ed",
+      "bytes": 48225
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU66_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU66_Secuencia_de_diseño.drawio",
+      "sha256": "2f56e1a07e2cadd72b5b3fbf3494021431c07b1a417f88b13673a8fc9ef14ce9",
+      "bytes": 32808
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-08 – Creación de ticket sin descripción.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-08 – Creación de ticket sin descripción.png",
+      "sha256": "2cd0acb69f662dbe68916b97dc16be42dd2844988f0cbf9b27656c586686212d",
+      "bytes": 32616
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU11_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU11_Secuencia_de_diseño.drawio",
+      "sha256": "041a7b369c7f69b9b104265e8c3fd97e235bc2e2e255392d5f3c3904e4a569aa",
+      "bytes": 27862
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.22 Diagrama de CU - Verificando la identidad chilena (módulo 11).drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.22 Diagrama de CU - Verificando la identidad chilena (módulo 11).drawio",
+      "sha256": "87fce7c3095da8f62ee514da4cd83c34a7f23a0fa9b318387df93f680cbf7a0b",
+      "bytes": 8749
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU09_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU09_Secuencia_de_diseño.drawio",
+      "sha256": "0b722a4cdca99b0fd95a1c22da008eb5d74ce419a68a3d2ba3c2cd49e2a8f8c8",
+      "bytes": 36711
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-24 – Sesión única segundo inicio cierra primera.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-24 – Sesión única segundo inicio cierra primera.png",
+      "sha256": "db6bbae0fe34defde0f35fe518c21d1bede263d9cf7709a043c209541f4b5863",
+      "bytes": 23575
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.2 Diagrama de CU - Editando el perfil de usuario.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.2 Diagrama de CU - Editando el perfil de usuario.drawio",
+      "sha256": "3c5e561a0834e45136f46d9ff17f610cff8ab12c3bfdf911db70704b80983dd8",
+      "bytes": 6357
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-12 – En Proceso.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-12 – En Proceso.png",
+      "sha256": "ca4e42e4a23eacfa799aa389ff16d7f2b274041c8f0e4210174dad632559beed",
+      "bytes": 10790
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-03 – Inicio de sesión con credenciales correctas.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-03 – Inicio de sesión con credenciales correctas.png",
+      "sha256": "44fa78b5ec63d0078b54e38385450f72f2da5bff5114696c98ced692d43ddbce",
+      "bytes": 43325
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-22 – Autenticación 2FA (código correcto).png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-22 – Autenticación 2FA (código correcto).png",
+      "sha256": "c68d5571ae1aa5b15a8803bf0b856d09e53a67017ca26331a41b179a929070d6",
+      "bytes": 26397
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-07 – Creación de ticket con todos los campos.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-07 – Creación de ticket con todos los campos.png",
+      "sha256": "51cc86d36c46740bbc88c5065cd4bcfca72e322d908654a01ed277dd2ae140f4",
+      "bytes": 32343
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU34_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU34_Secuencia_de_diseño.drawio",
+      "sha256": "f873699746d086ebfe8c6b0cff2fb87bd303af05214cfa20ec99876b67a2885f",
+      "bytes": 53383
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU26_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU26_Secuencia_de_diseño.drawio",
+      "sha256": "fae4d7364468d38ebf0da23cced844f90949adee6712284a52a848f170c67c5b",
+      "bytes": 34476
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU03_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU03_Secuencia_de_diseño.drawio",
+      "sha256": "14a69297810a73e5c88878745b9f9e5e71fc3606bd3c3b04322a6b38754ad221",
+      "bytes": 14385
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU42_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU42_Secuencia_de_diseño.drawio",
+      "sha256": "8ff7c878ecbeed0f547758969d3d9d60265d9ac600b377bedc070af4fb47c201",
+      "bytes": 37079
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-13 – Resuelto.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-13 – Resuelto.png",
+      "sha256": "a07c6fa53f3b12ed5398ae0ecd89150e8431a665c83c8140b5663cb4c10345a1",
+      "bytes": 11237
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.13 Diagrama de CU - Monitoreando dinámicamente los KPIs.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.13 Diagrama de CU - Monitoreando dinámicamente los KPIs.drawio",
+      "sha256": "fb483b840d21cff6911c0696dcb672904e22c75c417db76a2eb45d354f3dea02",
+      "bytes": 9249
+    },
+    {
+      "origen": "Incremento 1/Pruebas Unitarias y de Integracion/Prueba P-25 – Centro de notificaciones in-app.png",
+      "archivo": "Pruebas Unitarias y de Integracion/Prueba P-25 – Centro de notificaciones in-app.png",
+      "sha256": "3f509b1e51881b419667c2a28524643d9e280907f3b2030da06a5a12abd09027",
+      "bytes": 12431
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.19 Diagrama de CU - Gestionando la seguridad de acceso concurrente.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.19 Diagrama de CU - Gestionando la seguridad de acceso concurrente.drawio",
+      "sha256": "86615155d255c815106d89393a41009dc5bcac4a976d50b5651fdc4d50c02e95",
+      "bytes": 10202
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.17 Diagrama de CU - Renovando credenciales de acceso.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.17 Diagrama de CU - Renovando credenciales de acceso.drawio",
+      "sha256": "14b2bf3055de8032bdf2b3e79c1e3c80467ac860977d1156c679b439bfbe7f4e",
+      "bytes": 9863
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU02_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU02_Secuencia_de_diseño.drawio",
+      "sha256": "4e47827c5369255adbb807d1046a8fcc1fa2c9ac48c0c536e2d067fa9bb806df",
+      "bytes": 26278
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU51_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU51_Secuencia_de_diseño.drawio",
+      "sha256": "2e8e88e38bbbf21445871e99d6481ae158d89ee1b62ddbbc92ac15d485009dc0",
+      "bytes": 53569
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.1 Diagrama de CU - Registrando Usuarios en la plataforma.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.1 Diagrama de CU - Registrando Usuarios en la plataforma.drawio",
+      "sha256": "9de07b58c9929c46765220a246b151c04fb406e15c1e3c1258ca6828a3df95d7",
+      "bytes": 12960
+    },
+    {
+      "origen": "Incremento 1/Base_de_datos_INGSOFTWARE/MERE(draw.io)/mere Corregido.drawio",
+      "archivo": "Base_de_datos_INGSOFTWARE/MERE(draw.io)/mere Corregido.drawio",
+      "sha256": "cfd2fb6777e0472eb5f9c1b2161eca6389d0d75f0a6f50054da582859c3269d3",
+      "bytes": 124364
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.6 Diagrama de CU - Despachando notificaciones automáticas.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.6 Diagrama de CU - Despachando notificaciones automáticas.drawio",
+      "sha256": "d6a45e43480ac47e5e5c6b98a9b2ebd0438c18ed0e0cd923265a7842308c2460",
+      "bytes": 7870
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.3 Diagrama de CU - Controlando el acceso basado en roles.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.3 Diagrama de CU - Controlando el acceso basado en roles.drawio",
+      "sha256": "9d0050d824c4b85dd4ae3d3674db20a62ae260a5815a2131ff7073af642d1c3c",
+      "bytes": 5219
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.9 Diagrama de CU - Registrando transacciones de forma inmutable.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.9 Diagrama de CU - Registrando transacciones de forma inmutable.drawio",
+      "sha256": "9ddf875626913f890497f18f01ae7fe45fa07577b75873a73c5a71fa327173f4",
+      "bytes": 8741
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU32_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU32_Secuencia_de_diseño.drawio",
+      "sha256": "f49fe122d07afa1aede34a789c1e9c50a2fc94e0ef09d7542214e908a68881b8",
+      "bytes": 34233
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU36_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU36_Secuencia_de_diseño.drawio",
+      "sha256": "294131f26aaffedbac87865cedd136f763a9707450c2c21c9fcd17443dba5fcf",
+      "bytes": 32701
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.16 Diagrama de CU - Generando el respaldo físico del ticket.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.16 Diagrama de CU - Generando el respaldo físico del ticket.drawio",
+      "sha256": "dcc9da84e359a515866b84de8f677789e36ff414f91fdcd6b52b00e35cc8f078",
+      "bytes": 9857
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.11 Diagrama de CU - Autogestionando requerimientos a través del portal.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.11 Diagrama de CU - Autogestionando requerimientos a través del portal.drawio",
+      "sha256": "255f6adac7d3a371f40c3bbb5d1125a462777b1277d3e8751fbbfc453de61e8f",
+      "bytes": 8119
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU16_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU16_Secuencia_de_diseño.drawio",
+      "sha256": "9ff8f3c29e830c131be31a22426912226ba5058bf2298601f0914a1b6eff9070",
+      "bytes": 32433
+    },
+    {
+      "origen": "Incremento 1/Diagrama de casos de uso - Incremento 1/7.18 Diagrama de CU - Restableciendo la clave por olvido.drawio",
+      "archivo": "Diagrama de casos de uso - Incremento 1/7.18 Diagrama de CU - Restableciendo la clave por olvido.drawio",
+      "sha256": "ebe1d2c13376d3ef20a57a8c7a3d567fe97dabf290593ff4ad30b38ae388f51c",
+      "bytes": 9882
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU08_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU08_Secuencia_de_diseño.drawio",
+      "sha256": "7af1462343928370453a429d21cbe8cd41f1cf03510330037737476afb18a033",
+      "bytes": 27179
+    },
+    {
+      "origen": "Incremento 1/Base_de_datos_INGSOFTWARE/Modelo Fisico (draw.io)/modelo fisico mere.drawio",
+      "archivo": "Base_de_datos_INGSOFTWARE/Modelo Fisico (draw.io)/modelo fisico mere.drawio",
+      "sha256": "55c8d220a148327964dae5f83b4e4a3a4662494b16aed08a9b8fb63b4e6caea3",
+      "bytes": 58925
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU27_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU27_Secuencia_de_diseño.drawio",
+      "sha256": "54eeb5699a66d04b2cfb3c262b7c19ba488c809d78da4551de83229bd13576dd",
+      "bytes": 33861
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU35_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU35_Secuencia_de_diseño.drawio",
+      "sha256": "3759b018389c9125e274d9a8247914704f53fc72e2bdc0f76b3791c8ce87db58",
+      "bytes": 30215
+    },
+    {
+      "origen": "Incremento 1/Incremento 1 - Grupo 11 - IngenieríaSoftware.docx",
+      "archivo": "Incremento 1 - Grupo 11 - IngenieríaSoftware.docx",
+      "sha256": "f41d940573eb5dfb9b43147bf69397704a543d868032d1eff68ad4eae410740a",
+      "bytes": 6773640
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU20_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU20_Secuencia_de_diseño.drawio",
+      "sha256": "c81b16cc1be06beea42f99aa4f9c7f3edf8efd0c20ed281544c0351dff9b894e",
+      "bytes": 35583
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU38_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU38_Secuencia_de_diseño.drawio",
+      "sha256": "0249cb7f1f837e0072187436c423d0a4a75b2ae74c575e75030bdfad84ae454e",
+      "bytes": 41039
+    },
+    {
+      "origen": "Incremento 1/Diagramas De Secuencia Del Diseño/CU15_Secuencia_de_diseño.drawio",
+      "archivo": "Diagramas De Secuencia Del Diseño/CU15_Secuencia_de_diseño.drawio",
+      "sha256": "b1e72a1bf5577fdab4271e7e7a9f1aba5256d38b3893b337865855d640833459",
+      "bytes": 25927
+    },
+    {
+      "origen": "Incremento 1/Base_de_datos_INGSOFTWARE/normalizacion_modelos.docx",
+      "archivo": "Base_de_datos_INGSOFTWARE/normalizacion_modelos.docx",
+      "sha256": "40aa8e78123210bf065024b547da0de01abcf9e3336a3c41baa10de09f1301be",
+      "bytes": 480430
+    },
+    {
+      "origen": "Incremento 1/Presentación Incremento 1 - Semestre 1/Incremento1_CentroClinicoAconcagua.pptx",
+      "archivo": "Presentación Incremento 1 - Semestre 1/Incremento1_CentroClinicoAconcagua.pptx",
+      "sha256": "53216d242e141dca3095d69b713b1a6aebeeb48b2fdbd05b4c485a1384344647",
+      "bytes": 2134204
+    },
+    {
+      "origen": "Incremento 1/Presentación Incremento 1 - Semestre 2/Incremento1_CentroClinicoAconcagua.pptx.pptx",
+      "archivo": "Presentación Incremento 1 - Semestre 2/Incremento1_CentroClinicoAconcagua.pptx.pptx",
+      "sha256": "e0d39d2a948e3fc99278a9c153d1a97588ea9c4f2ab1b5fa32efba2b618b46d4",
+      "bytes": 733830
+    },
+    {
+      "origen": "Incremento 1/Presentación Incremento 1 - Semestre 2/Incremento 1 - Semestre 2.mp4",
+      "release": "I1-Presentacion-Incremento-1---Semestre-2-Incremento-1---Semestre-2.mp4",
+      "sha256": "ffbe1b4fc10fb5a708ba0f47845fac0140905fb6837cc626e643c5376240c05a",
+      "bytes": 340383895
+    },
+    {
+      "origen": "Incremento 1/Presentación Incremento 1 - Semestre 1/Presentación Grupo 11 - Incremento 1.mp4",
+      "release": "I1-Presentacion-Incremento-1---Semestre-1-Presentacion-Grupo-11---Incremento-1.mp4",
+      "sha256": "c8498be2b7ee25b0f0ba122096041e72777360a858fc8e18e8c35e57919a2db9",
+      "bytes": 252900015
+    }
+  ],
+  "excluidos": [
+    "Incremento 1/Base_de_datos_INGSOFTWARE/codigo en texto.txt",
+    "Incremento 1/Diagramas De Secuencia Del Diseño/.$CU42_Secuencia_de_diseño_corregido1drawio.drawio.bkp",
+    "Incremento 1/Pagina Web/Pagina Web/package.json",
+    "Incremento 1/Base_de_datos_INGSOFTWARE/M_fis y Cod (MySQL)/bd_sql(modelo fisico).mwb",
+    "Incremento 1/Base_de_datos_INGSOFTWARE/BD_completa.sql",
+    "Incremento 1/Pagina Web/readme.txt",
+    "Incremento 1/Pagina Web/Pagina Web/public/index.html",
+    "Incremento 1/Diagramas De Secuencia Del Diseño/.$CU51_Secuencia_de_diseño_corregido1.drawio.bkp",
+    "Incremento 1/Base_de_datos_INGSOFTWARE/M_fis y Cod (MySQL)/bd_codigo.sql",
+    "Incremento 1/Pagina Web/Pagina Web/server.js",
+    "Incremento 1/Diagramas De Secuencia Del Diseño/.$CU01_Secuencia_de_diseño.drawio.bkp",
+    "Incremento 1/Pagina Web/Pagina Web/package-lock.json",
+    "Incremento 1/Pagina Web/Pagina Web/public/manuales/1781297912711-red internet.pdf",
+    "Incremento 1/Pagina Web/Pagina Web/public/manuales/1781278335891-impresora.pdf"
+  ]
+}

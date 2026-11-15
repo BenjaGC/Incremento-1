@@ -1,5 +1,14 @@
 # Incremento 1 — Ticketera Clínica Aconcagua
 
+<!-- FINAL-20261115 -->
+## Entrega académica final actualizada
+
+**15 de noviembre de 2026:** [documentos, diagramas, planillas, evidencias y presentación finales](Entrega-academica/Final-20261115/). [Videos finales y descargas](https://github.com/BenjaGC/Incremento-1/releases/tag/entrega-final-20261115). Esta entrega reemplaza la documentación académica anterior como referencia vigente; el código y la instalación revisados se conservan.
+
+- [Presentación Incremento 1 - Semestre 2\Incremento 1 - Semestre 2.mp4](https://github.com/BenjaGC/Incremento-1/releases/download/entrega-final-20261115/I1-Presentacion-Incremento-1---Semestre-2-Incremento-1---Semestre-2.mp4)
+- [Presentación Incremento 1 - Semestre 1\Presentación Grupo 11 - Incremento 1.mp4](https://github.com/BenjaGC/Incremento-1/releases/download/entrega-final-20261115/I1-Presentacion-Incremento-1---Semestre-1-Presentacion-Grupo-11---Incremento-1.mp4)
+<!-- /FINAL-20261115 -->
+
 Entrega académica del Grupo 11, organizada a partir del ZIP recibido el 4 de octubre de 2026. Este repositorio conserva el código y los documentos de ese incremento.
 
 ## Contenido
